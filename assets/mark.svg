@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+  <!--
+    Iterate mark: three nested incomplete circular arcs.
+    Gaps open toward the top-right / right so the rings read as clockwise motion.
+    Redrawn as stroke paths from Jason's lockup still (not a raster trace).
+    Lockup B uses this mark beside the two-line ITERATE / CONSULTING wordmark.
+  -->
+  <g class="mark-rings" stroke="#F4F4F5" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+    <path class="ring ring-outer" pathLength="100" d="M 81.503 71.249 A 38 38 0 1 1 82.226 29.863"/>
+    <path class="ring ring-mid" pathLength="100" d="M 72.897 64.308 A 27 27 0 1 1 49.058 23.016"/>
+    <path class="ring ring-inner" pathLength="100" d="M 65.650 46.673 A 16 16 0 1 1 60.706 38.110"/>
+  </g>
+</svg>

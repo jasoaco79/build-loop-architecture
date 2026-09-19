@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chicago Build Loop — Iterate Consulting</title>
+  <meta name="description" content="Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes. Architecture for Iterate Consulting — design only, HOLD live.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0A0A0B">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip" href="#hero">Skip to thesis</a>
+
+  <header class="site-header">
+    <a class="lockup-b" href="#hero" aria-label="Iterate Consulting — Chicago Build Loop">
+      <img class="lockup-b-mark" src="assets/mark.svg" alt="" width="28" height="28">
+      <span class="lockup-b-word">
+        <span class="lockup-b-name">Iterate</span>
+        <span class="lockup-b-sub">Consulting</span>
+      </span>
+    </a>
+    <p class="header-meta">
+      <span>Architecture / Chicago</span>
+      <span class="dot" aria-hidden="true">·</span>
+      <span class="hold-pill">Hold live</span>
+    </p>
+  </header>
+
+  <main>
+    <!-- 01 / Hero — The operating thesis -->
+    <section class="plate plate-hero" id="hero" aria-labelledby="hero-title">
+      <div class="plate-inner">
+        <div class="plate-top">
+          <p class="kicker">01 / The operating thesis</p>
+          <p class="kicker-right desktop-only">Architecture / Chicago</p>
+        </div>
+
+        <h1 id="hero-title" class="display">
+          <span class="display-chicago">Chicago</span>
+          <span class="display-buildloop">Buildloop</span>
+        </h1>
+        <h1 class="display-mobile" aria-hidden="true">
+          <span>Chicago</span>
+          <span>Build</span>
+          <span class="cyan">Loop</span>
+        </h1>
+
+        <p class="thesis">Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes.</p>
+        <p class="subthesis">Architecture for Iterate Consulting · design only · HOLD live</p>
+
+        <div class="hero-flow desktop-only" aria-label="Thesis flow">
+          <article class="card">
+            <p class="num">01</p>
+            <h2>Frame the ask.</h2>
+            <p>Erlich routes the brief. Dinesh designs when needed. Jason locks the plates.</p>
+          </article>
+          <span class="flow-arrow" aria-hidden="true"></span>
+          <article class="card card-fan">
+            <p class="num">02 / Jian-Yang fans out</p>
+            <ul class="writer-list">
+              <li><span class="dot-on"></span>Cursor cloud <span>branch 01</span></li>
+              <li><span class="dot-on"></span>pi / terra-gpt <span>branch 02</span></li>
+              <li><span class="dot-on"></span>Antigravity <span>branch 03</span></li>
+              <li><span class="dot-on"></span>Grok Build <span>branch 04</span></li>
+            </ul>
+          </article>
+          <span class="flow-arrow" aria-hidden="true"></span>
+          <article class="card">
+            <p class="num">03</p>
+            <h2>Review all.</h2>
+            <p>Codex reviews each PR when open. Review-only.</p>
+          </article>
+          <span class="flow-arrow" aria-hidden="true"></span>
+          <article class="card">
+            <p class="num">04</p>
+            <h2>Pick one.</h2>
+            <p>Erlich takes the first clean PR. Closes the other three.</p>
+          </article>
+          <span class="flow-arrow" aria-hidden="true"></span>
+          <article class="card card-accent">
+            <p class="num">05</p>
+            <h2>Explicit yes.</h2>
+            <p>Jason authorizes merge. Gilfoyle deploys if needed, with Jason’s yes.</p>
+          </article>
+        </div>
+
+        <p class="band desktop-only">
+          <span>One brief → four independent branches</span>
+          <span>One clean ship → human approval</span>
+        </p>
+
+        <ul class="role-pills desktop-only">
+          <li>Erlich — Chicago PM / PR router</li>
+          <li>Dinesh — design-only</li>
+          <li>Jian-Yang — coding owner</li>
+          <li>Codex — review-only</li>
+          <li>Gilfoyle — deploy / infra</li>
+          <li>Jason — explicit yes before merge / deploy</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 02 / Loop — six steps (desktop row + mobile rail) -->
+    <section class="plate plate-loop" id="loop" aria-labelledby="loop-title">
+      <div class="plate-inner">
+        <div class="plate-top">
+          <p class="kicker">02 / End-to-end architecture</p>
+          <p class="kicker-right desktop-only">Chicago / Operating sequence</p>
+        </div>
+
+        <div class="title-row desktop-only">
+          <h2 id="loop-title" class="display-sm">One loop. Clear ownership.</h2>
+          <p class="aside">Design when needed. Race in parallel. Converge before anything ships.</p>
+        </div>
+
+        <p class="mobile-meta">
+          <span>The loop / 6 steps</span>
+          <span>4 branches → 1 ship PR</span>
+        </p>
+
+        <ol class="loop-row desktop-only">
+          <li class="card">
+            <p class="phase">Define &amp; lock</p>
+            <p class="num">01</p>
+            <h3>Ask lands at Erlich.</h3>
+            <p>Chicago PM receives the ask and routes the work.</p>
+            <p class="foot">Entry / brief</p>
+          </li>
+          <li class="card">
+            <p class="phase">Define &amp; lock</p>
+            <p class="num">02</p>
+            <h3>UI needs design?</h3>
+            <p>Dinesh → Open Design / Astra plates → Jason locks plates. No UI needed? Continue.</p>
+            <p class="foot">Conditional / design-only</p>
+          </li>
+          <li class="card">
+            <p class="phase">Build &amp; review</p>
+            <p class="num">03</p>
+            <h3>Four writers. Concurrent.</h3>
+            <p>Jian-Yang starts four writers on separate branches.</p>
+            <p class="foot">Fan-out / 4 branches</p>
+          </li>
+          <li class="card">
+            <p class="phase">Build &amp; review</p>
+            <p class="num">04</p>
+            <h3>Every PR gets reviewed.</h3>
+            <p>Codex reviews each PR when open. All four enter the review lane.</p>
+            <p class="foot">Review-only / every PR</p>
+          </li>
+          <li class="card">
+            <p class="phase">Select &amp; authorize</p>
+            <p class="num">05</p>
+            <h3>First clean PR wins.</h3>
+            <p>Erlich picks the first clean PR; closes the other three.</p>
+            <p class="foot">Converge / one ship PR</p>
+          </li>
+          <li class="card card-accent">
+            <p class="phase">Select &amp; authorize</p>
+            <p class="num">06</p>
+            <h3>Jason yes. Then merge.</h3>
+            <p>Gilfoyle deploys if needed. Jason’s explicit yes is required before merge / deploy.</p>
+            <p class="foot">Human gate / no auto-ship</p>
+          </li>
+        </ol>
+
+        <ol class="loop-rail mobile-only">
+          <li>
+            <article class="card">
+              <h3><span>01</span> Ask lands at Erlich</h3>
+              <p>Chicago PM / PR router</p>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <h3><span>02</span> UI needs design?</h3>
+              <p>Dinesh → Open Design / Astra plates. Jason locks plates. Otherwise, continue.</p>
+              <p class="chip-inline">design-only</p>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <h3><span>03</span> Jian-Yang starts four writers</h3>
+              <p>Coding owner · concurrent, separate branches</p>
+              <ul class="writer-chips">
+                <li>Cursor cloud</li>
+                <li>pi / terra-gpt</li>
+                <li>Antigravity</li>
+                <li>Grok Build</li>
+              </ul>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <h3><span>04</span> Codex reviews each PR</h3>
+              <p>When open. All four get reviewed.</p>
+              <p class="chip-inline">review-only</p>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <h3><span>05</span> Erlich picks the first clean PR</h3>
+              <p>Closes the other three. Empty CI / billing skips are not “clean”.</p>
+            </article>
+          </li>
+          <li>
+            <article class="card card-accent">
+              <h3><span>06</span> Jason yes → merge</h3>
+              <p>Gilfoyle · deploy / infra · deploys if needed. Jason: explicit yes before merge / deploy.</p>
+            </article>
+          </li>
+        </ol>
+
+        <p class="rule-bar desktop-only">
+          <span>Fastest is not enough. <strong>First clean</strong> is the selection rule.</span>
+          <span>Empty CI / billing skips ≠ clean.</span>
+        </p>
+
+        <ul class="role-grid desktop-only">
+          <li><strong>Erlich</strong> Chicago PM / PR router</li>
+          <li><strong>Dinesh</strong> design-only</li>
+          <li><strong>Jian-Yang</strong> coding owner</li>
+          <li><strong>Codex</strong> review-only</li>
+          <li><strong>Gilfoyle</strong> deploy / infra</li>
+          <li><strong>Jason</strong> explicit yes before merge / deploy</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 03 / Writers -->
+    <section class="plate plate-writers" id="writers" aria-labelledby="writers-title">
+      <div class="plate-inner">
+        <div class="plate-top">
+          <p class="kicker">03 / Writer topology</p>
+          <p class="kicker-right desktop-only">Chicago / Parallel build layer</p>
+        </div>
+
+        <div class="title-row">
+          <h2 id="writers-title" class="display-sm">Four lanes. One finish.</h2>
+          <p class="aside">Concurrent by design, isolated by branch. Harness and model assignments explicit.</p>
+        </div>
+
+        <p class="owner-pill">Jian-Yang · coding owner · starts four concurrent writers</p>
+
+        <ol class="writer-grid">
+          <li class="card">
+            <p class="num">01 <span>Concurrent writer</span></p>
+            <h3>Cursor cloud</h3>
+            <p class="tag">Harness + model</p>
+            <p>Cursor cloud agents (account default model)</p>
+            <p class="foot"><span>Separate branch 01</span><span>PR → Codex</span></p>
+          </li>
+          <li class="card">
+            <p class="num">02 <span>Concurrent writer</span></p>
+            <h3>pi / terra-gpt</h3>
+            <p class="tag">Harness + model</p>
+            <p>pi CLI with terra-gpt</p>
+            <p class="foot"><span>Separate branch 02</span><span>PR → Codex</span></p>
+          </li>
+          <li class="card">
+            <p class="num">03 <span>Concurrent writer</span></p>
+            <h3>Antigravity</h3>
+            <p class="tag">Harness + model</p>
+            <p>Antigravity CLI (aggy); Google AI Pro</p>
+            <p class="foot"><span>Separate branch 03</span><span>PR → Codex</span></p>
+          </li>
+          <li class="card">
+            <p class="num">04 <span>Concurrent writer</span></p>
+            <h3>Grok Build</h3>
+            <p class="tag">Harness + model</p>
+            <p>Grok Build on SuperGrok bucket</p>
+            <p class="foot"><span>Separate branch 04</span><span>PR → Codex</span></p>
+          </li>
+        </ol>
+
+        <ol class="converge-rail desktop-only">
+          <li>Codex reviews all PR openings</li>
+          <li>When each PR opens</li>
+          <li>Erlich picks first clean</li>
+          <li>Closes other three</li>
+          <li>Jason gives explicit yes</li>
+          <li>Before merge / deploy</li>
+        </ol>
+
+        <p class="rules">
+          <span class="rules-label">Race rules</span>
+          <span class="chip">Separate branches</span>
+          <span class="chip">First clean wins</span>
+          <span class="chip">One ship PR after pick</span>
+          <span class="chip">Codex on all</span>
+          <span class="chip">No merge without Jason yes</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- 04 / Failover -->
+    <section class="plate plate-failover" id="failover" aria-labelledby="failover-title">
+      <div class="plate-inner">
+        <div class="plate-top">
+          <p class="kicker">04 / Redundancy &amp; failover</p>
+          <p class="kicker-right desktop-only">Chicago / Continuity architecture</p>
+        </div>
+
+        <div class="title-row">
+          <h2 id="failover-title" class="display-sm">A stalled lane isn’t a stalled loop.</h2>
+          <p class="aside">Keep the race moving. Never weaken the clean-PR gate.</p>
+        </div>
+
+        <div class="fail-block">
+          <aside>
+            <p class="num">01 / Execution</p>
+            <h3>Writer resilience</h3>
+            <p>One unavailable. Three still racing.</p>
+          </aside>
+          <div class="fail-body">
+            <p class="owner-pill compact">Erlich — Chicago PM / PR router</p>
+            <div class="lane-grid">
+              <article class="card card-off">
+                <h4>Cursor cloud</h4>
+                <p>Usage limit / offline</p>
+              </article>
+              <article class="card">
+                <h4>pi / terra-gpt</h4>
+                <p class="live">Keeps racing</p>
+              </article>
+              <article class="card">
+                <h4>Antigravity</h4>
+                <p class="live">Keeps racing</p>
+              </article>
+              <article class="card">
+                <h4>Grok Build</h4>
+                <p class="live">Keeps racing</p>
+              </article>
+            </div>
+            <p class="fail-note">If one writer hits a usage limit or goes offline, the other three keep racing. Separate branches remain isolated.</p>
+          </div>
+        </div>
+
+        <div class="fail-block">
+          <aside>
+            <p class="num">02 / Quality</p>
+            <h3>Same ship gate</h3>
+            <p>Availability is not evidence of quality.</p>
+          </aside>
+          <div class="gate-row">
+            <article class="card">
+              <h4>Codex reviews each open PR</h4>
+              <p>Review-only. No writer bypass.</p>
+            </article>
+            <article class="card">
+              <h4>Erlich picks first clean</h4>
+              <p>Empty CI / billing skips are not “clean”.</p>
+            </article>
+            <article class="card">
+              <h4>Jason’s explicit yes</h4>
+              <p>Required before merge / deploy.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="fail-block">
+          <aside>
+            <p class="num">03 / Handoff</p>
+            <h3>Grok Bot usage</h3>
+            <p>Leftover-work path. Separate from the race.</p>
+          </aside>
+          <div class="handoff-bar">
+            <div class="meter">
+              <p class="meter-value">~80%</p>
+              <p>Grok Bot usage</p>
+              <div class="meter-track" aria-hidden="true"><span></span></div>
+            </div>
+            <article class="card card-accent handoff-card">
+              <p class="tag">Leftover handoff</p>
+              <h4>StarrClaw / popstarr / Neo</h4>
+              <p>Erlich routes the handoff. No on-demand burn.</p>
+            </article>
+          </div>
+        </div>
+
+        <p class="plate-note">
+          <span>Routing owner: Erlich. Coding owner: Jian-Yang.</span>
+          <span>Threshold shown is a policy marker, not live telemetry.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- 05 / Dallas Slack overflow -->
+    <section class="plate plate-dallas" id="dallas" aria-labelledby="dallas-title">
+      <div class="plate-inner">
+        <div class="plate-top">
+          <p class="kicker">05 / Cross-desk load balance</p>
+          <p class="kicker-right desktop-only">Chicago → Dallas / Desk bridge</p>
+        </div>
+
+        <div class="title-row">
+          <h2 id="dallas-title" class="display-sm">More capacity. Not another bot.</h2>
+          <p class="aside">A CoS-to-CoS relay through Slack. Dallas is the overflow path, not the default race.</p>
+        </div>
+
+        <p class="route-bar">
+          <span class="route-label">Route to Dallas when</span>
+          <span>Chicago capacity is tight</span>
+          <span>The job fits Dallas full-stack · e.g. Bolton on pi</span>
+        </p>
+
+        <div class="dallas-grid">
+          <article class="card">
+            <p class="desk-label"><span>Chicago</span><span>Origin desk</span></p>
+            <p class="num">01</p>
+            <h3>Chicago CoS</h3>
+            <p>Recognizes a capacity constraint. Relays the brief to Dallas CoS in the Slack room.</p>
+            <p class="chip-inline">Brief relay / desk coordination</p>
+            <p class="foot">Local four-writer loop remains the default.</p>
+          </article>
+          <article class="card card-bridge">
+            <p class="desk-label"><span>Slack bridge</span><span>Shared coordination room</span></p>
+            <p class="num">02</p>
+            <h3>Chicago CoS ↔ Dallas CoS</h3>
+            <p class="channel">#iterate-ord-dfw-rsw-cos</p>
+            <p>Relay the brief — CoS-to-CoS bridge.</p>
+            <p>CoS mirrors also use <span class="channel-inline">#iterate-chicago-dallas-cosos</span>.</p>
+            <p class="foot">A desk handoff, not a second Chicago coder bot.</p>
+          </article>
+          <article class="card">
+            <p class="desk-label"><span>Dallas</span><span>Overflow desk</span></p>
+            <p class="num">03</p>
+            <h3>Dallas CoS</h3>
+            <p>Receives the relayed brief for Dallas full-stack work. Coordinates the Dallas-side desk response.</p>
+            <p class="chip-inline">Full-stack fit / e.g. Bolton on pi</p>
+            <p class="foot">Additional desk capacity, outside the default race.</p>
+          </article>
+        </div>
+
+        <div class="handshake">
+          <p><strong>grok-desk CURRENT.md</strong> remains the week notebook handshake.</p>
+          <p class="chip">Chicago CoS ↔ Dallas CoS</p>
+          <p>Slack carries the relay. The notebook handshake stays in place.</p>
+        </div>
+
+        <p class="plate-note">
+          <span>Overflow path, not default race.</span>
+          <span>No second Chicago coder bot. No change to Jason’s merge / deploy approval gate.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- 07 / Lifecycle (plate 06 is the mobile composition of 01–02) -->
+    <section class="plate plate-lifecycle" id="lifecycle" aria-labelledby="lifecycle-title">
+      <div class="plate-inner">
+        <div class="plate-top">
+          <p class="kicker">07 / Lifecycle arc</p>
+          <p class="kicker-right desktop-only">Chicago / Lifecycle</p>
+        </div>
+
+        <div class="title-row">
+          <h2 id="lifecycle-title" class="display-sm">From concept to deployment.</h2>
+          <p class="aside">Architecture for Iterate Consulting · design only · HOLD live. Four stages. Clear ownership. No auto-ship.</p>
+        </div>
+
+        <p class="skip-label desktop-only">Skip design if no UI</p>
+
+        <ol class="life-grid">
+          <li class="card">
+            <p class="num">01 / Concept</p>
+            <h3>Ask lands at Erlich.</h3>
+            <p>Brief framed. Ready for design or execution.</p>
+            <p class="chip-inline">Intake / brief</p>
+            <p class="foot">Erlich — PM / PR router</p>
+          </li>
+          <li class="card">
+            <p class="num">02 / Design</p>
+            <h3>If UI: Dinesh shapes the plates.</h3>
+            <p>Open Design / Astra → Jason locks plates.</p>
+            <p class="chip-inline">Design-only lane</p>
+            <p class="foot">Dinesh — design-only</p>
+          </li>
+          <li class="card">
+            <p class="num">03 / Execution</p>
+            <h3>Jian-Yang launches four concurrent writers.</h3>
+            <p>Separate branches: Cursor cloud · pi / terra-gpt · Antigravity · Grok Build.</p>
+            <p>Codex reviews each PR. Erlich picks first clean; closes the other three.</p>
+            <p class="foot">Jian-Yang — coding owner · Codex — review-only</p>
+          </li>
+          <li class="card card-accent">
+            <p class="num">04 / Deployment</p>
+            <h3>Human approval gate</h3>
+            <p>Jason explicit yes → merge. Gilfoyle deploys if needed.</p>
+            <p class="chip-inline">No auto-ship</p>
+            <p class="foot">Jason — explicit yes · Gilfoyle — deploy / infra</p>
+          </li>
+        </ol>
+
+        <div class="life-bottom">
+          <article class="card wide">
+            <p class="tag">One lifecycle / explicit handoffs</p>
+            <p>Frame the ask. Lock the design. Race the build. Ship only with a human yes.</p>
+          </article>
+          <article class="card">
+            <p class="tag">Failover</p>
+            <p>Other writers keep racing. → <a href="#failover">plate 04</a></p>
+          </article>
+          <article class="card">
+            <p class="tag">Dallas Slack overflow</p>
+            <p>Overflow path — not default race. → <a href="#dallas">plate 05</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Iterate Consulting / Chicago Build Loop</p>
+    <p>Architecture · design only · HOLD live</p>
+    <p>No live execution · no auto-ship</p>
+  </footer>
+</body>
+</html>
