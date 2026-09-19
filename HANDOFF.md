@@ -88,7 +88,7 @@ No npm. No build step. No `.env`.
 
 **Optional 5th overflow writer seat (not the default race)**
 
-One optional seat when named. Two options shown: **Codex** or **Astra**. Label as optional / overflow. Do not draw a fifth concurrent default lane. Chicago’s four-writer race stays the default.
+One optional seat when named. Two options shown: **Codex** or **Astra**. Label as optional / overflow. **Erlich opens this seat only** — it is not a fifth concurrent default lane. Chicago’s four-writer race stays the default.
 
 ### Tension: Codex review-only lock vs optional 5th seat
 
