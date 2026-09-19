@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicago Build Loop / Mobile — Iterate Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0A0A0B;--panel:#121214;--raised:#1A1A1E;--line:rgba(255,255,255,.08);--accent:#22D3EE;--text:#F5F5F5;--muted:#A1A1AA}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+#frame{width:390px;height:844px;overflow:hidden;position:relative;padding:22px 24px;background:radial-gradient(ellipse at 95% 24%,rgba(34,211,238,.065),transparent 50%),var(--bg)}
+#frame:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;opacity:.16;pointer-events:none}
+header,main,footer{position:relative}
+header{height:44px;display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{width:157px;height:28px;object-fit:contain;object-position:left}
+.hold{font-size:8px;letter-spacing:.12em;color:var(--accent);border:1px solid rgba(34,211,238,.25);border-radius:20px;padding:6px 8px;margin-top:2px}
+.hero{padding-top:22px}
+.eyebrow{font-size:9px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
+h1{font:500 46px/1.04 "Playfair Display",Georgia,serif;letter-spacing:-.04em;margin:12px 0 14px}
+h1 span{color:var(--accent)}
+.thesis{font-size:13px;line-height:1.65;letter-spacing:-.01em;margin:0;max-width:330px}
+.subtitle{font-size:9px;color:var(--muted);line-height:1.6;margin:10px 0 0}
+.loop-head{display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px}
+.loop-head span:last-child{font-size:9px;color:var(--accent)}
+.loop{list-style:none;padding:0;margin:0;position:relative}
+.loop:before{content:"";position:absolute;left:14px;top:19px;bottom:36px;width:1px;background:rgba(34,211,238,.25)}
+.step{display:grid;grid-template-columns:30px 1fr;gap:12px;position:relative;margin-bottom:10px}
+.num{width:29px;height:29px;border:1px solid rgba(34,211,238,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg);font-size:10px;color:var(--accent);margin-top:8px;z-index:1}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.card h2{font-size:12px;line-height:1.3;font-weight:500;margin:0 0 4px;letter-spacing:-.01em}
+.card p{font-size:10px;line-height:1.55;color:var(--muted);margin:0}
+.role{font-size:8px;color:var(--muted);border:1px solid var(--line);border-radius:12px;padding:2px 5px;margin-left:5px;font-weight:400;vertical-align:1px}
+.writer-tags{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:7px}
+.writer-tags span{font-size:8px;color:var(--muted);background:var(--raised);border:1px solid var(--line);border-radius:4px;padding:4px 5px}
+.last{border-color:rgba(34,211,238,.3)}
+.last h2{color:var(--accent)}
+footer{position:absolute;bottom:21px;left:24px;right:24px;border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="frame">
+<header>
+<img class="logo" src="lockup-b.svg" alt="Iterate Consulting">
+<span class="hold">HOLD LIVE</span>
+</header>
+<main>
+<section class="hero">
+<div class="eyebrow">Architecture / Chicago</div>
+<h1>Chicago<br><span>Build Loop</span></h1>
+<p class="thesis">Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes.</p>
+<p class="subtitle">Architecture for Iterate Consulting · design only · HOLD live</p>
+</section>
+<div class="loop-head"><span class="eyebrow">The loop / 6 steps</span><span>4 branches → 1 ship PR</span></div>
+<ol class="loop" aria-label="Six-step Chicago build loop">
+<li class="step">
+<span class="num">01</span>
+<div class="card"><h2>Ask lands at Erlich</h2><p>Chicago PM / PR router</p></div>
+</li>
+<li class="step">
+<span class="num">02</span>
+<div class="card"><h2>UI needs design? <span class="role">design-only</span></h2><p>Dinesh → Open Design / Astra plates.<br>Jason locks plates. Otherwise, continue.</p></div>
+</li>
+<li class="step">
+<span class="num">03</span>
+<div class="card">
+<h2>Jian-Yang starts FOUR writers</h2>
+<p>Coding owner · concurrent, separate branches</p>
+<div class="writer-tags"><span>Cursor cloud</span><span>pi / terra-gpt</span><span>Antigravity</span><span>Grok Build</span></div>
+</div>
+</li>
+<li class="step">
+<span class="num">04</span>
+<div class="card"><h2>Codex reviews each PR <span class="role">review-only</span></h2><p>When open. All four get reviewed.</p></div>
+</li>
+<li class="step">
+<span class="num">05</span>
+<div class="card"><h2>Erlich picks the first clean PR</h2><p>Closes the other three. Empty CI / billing<br>skips are not “clean”.</p></div>
+</li>
+<li class="step">
+<span class="num">06</span>
+<div class="card last"><h2>Jason yes → merge</h2><p>Gilfoyle · deploy / infra · deploys if needed.<br>Jason: explicit yes before merge/deploy.</p></div>
+</li>
+</ol>
+</main>
+<footer><span>Iterate / Design-only architecture</span><span>06 / 06</span></footer>
+</div>
+</body>
+</html>

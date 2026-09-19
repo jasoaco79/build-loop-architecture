@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four Concurrent Writers — Iterate Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0A0A0B;--panel:#121214;--raised:#1A1A1E;--line:rgba(255,255,255,.08);--accent:#22D3EE;--text:#F5F5F5;--muted:#A1A1AA}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+#frame{width:1440px;height:900px;overflow:hidden;position:relative;padding:40px 64px;background:radial-gradient(ellipse at 50% 52%,rgba(34,211,238,.045),transparent 54%),var(--bg)}
+header{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between}
+.logo{width:210px;height:38px;object-fit:contain;object-position:left}
+.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}
+.header-note{padding-top:12px}.header-note span{color:var(--accent);margin-left:20px}
+main{padding-top:40px}
+.title-row{display:flex;align-items:flex-end;justify-content:space-between}
+h1{font:500 58px/1.15 "Playfair Display",Georgia,serif;letter-spacing:-.035em;margin:14px 0 0}
+.title-row p{font-size:13px;color:var(--muted);line-height:1.7;text-align:right;margin:0 0 3px}
+.owner{display:flex;justify-content:center;margin-top:26px}
+.owner span{padding:10px 19px;background:var(--raised);border:1px solid var(--line);border-radius:24px;font-size:12px}
+.owner b{color:var(--accent);font-weight:500}
+.bus{height:35px;position:relative;margin:0 12%}
+.bus:before{content:"";position:absolute;left:50%;top:0;height:18px;width:1px;background:rgba(34,211,238,.4)}
+.bus:after{content:"";position:absolute;left:0;right:0;top:18px;height:17px;border-top:1px solid rgba(34,211,238,.3);border-left:1px solid rgba(34,211,238,.3);border-right:1px solid rgba(34,211,238,.3);border-radius:8px 8px 0 0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{height:302px;padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:12px;position:relative}
+.card:before{content:"";position:absolute;width:1px;height:17px;background:rgba(34,211,238,.3);left:50%;top:-18px}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.num{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(34,211,238,.25);border-radius:50%;font-size:11px;color:var(--accent)}
+.parallel{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.parallel:before{content:"";display:inline-block;width:5px;height:5px;background:var(--accent);border-radius:50%;margin-right:7px}
+h2{font-size:23px;letter-spacing:-.035em;font-weight:500;margin:0 0 23px}
+.label{font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:9px}
+.model{font-size:14px;line-height:1.7;margin:0;min-height:55px}
+.branch{position:absolute;bottom:22px;left:24px;right:24px;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+.branch span:last-child{color:var(--accent)}
+.review{margin-top:26px;display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;align-items:center}
+.stage{background:var(--raised);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;font-size:12px}
+.stage small{font-size:11px;color:var(--muted)}
+.arrow{text-align:center;color:var(--accent)}
+.rules{margin-top:28px;display:flex;gap:9px;align-items:center}
+.rules .label{margin:0 13px 0 0}
+.chip{font-size:11px;border:1px solid var(--line);border-radius:20px;padding:9px 13px;color:var(--muted)}
+.chip:last-child{color:var(--accent);border-color:rgba(34,211,238,.25)}
+footer{position:absolute;bottom:29px;left:64px;right:64px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="frame">
+<header>
+<img class="logo" src="lockup-b.svg" alt="Iterate Consulting">
+<div class="eyebrow header-note">Chicago / Parallel build layer <span>HOLD LIVE</span></div>
+</header>
+<main>
+<div class="title-row">
+<div><div class="eyebrow">03 / Writer topology</div><h1>Four lanes. One finish.</h1></div>
+<p>Concurrent by design, isolated by branch.<br>Harness and model assignments stay explicit.</p>
+</div>
+<div class="owner"><span><b>Jian-Yang</b> · coding owner · starts FOUR concurrent writers</span></div>
+<div class="bus" aria-hidden="true"></div>
+<section class="cards" aria-label="Four concurrent writer assignments">
+<article class="card">
+<div class="card-top"><span class="num">01</span><span class="parallel">Concurrent writer</span></div>
+<h2>Cursor cloud</h2>
+<div class="label">Harness + model</div>
+<p class="model">Cursor cloud agents (account default model)</p>
+<div class="branch"><span>Separate branch 01</span><span>PR → Codex</span></div>
+</article>
+<article class="card">
+<div class="card-top"><span class="num">02</span><span class="parallel">Concurrent writer</span></div>
+<h2>pi / terra-gpt</h2>
+<div class="label">Harness + model</div>
+<p class="model">pi CLI with terra/gpt</p>
+<div class="branch"><span>Separate branch 02</span><span>PR → Codex</span></div>
+</article>
+<article class="card">
+<div class="card-top"><span class="num">03</span><span class="parallel">Concurrent writer</span></div>
+<h2>Antigravity</h2>
+<div class="label">Harness + model</div>
+<p class="model">Antigravity CLI (agy); Google AI Pro</p>
+<div class="branch"><span>Separate branch 03</span><span>PR → Codex</span></div>
+</article>
+<article class="card">
+<div class="card-top"><span class="num">04</span><span class="parallel">Concurrent writer</span></div>
+<h2>Grok Build</h2>
+<div class="label">Harness + model</div>
+<p class="model">Grok Build on SuperGrok bucket</p>
+<div class="branch"><span>Separate branch 04</span><span>PR → Codex</span></div>
+</article>
+</section>
+<div class="review" aria-label="Convergence after the race">
+<div class="stage"><span>Codex reviews all</span><small>When each PR opens</small></div>
+<div class="arrow" aria-hidden="true">→</div>
+<div class="stage"><span>Erlich picks first clean</span><small>Closes other three</small></div>
+<div class="arrow" aria-hidden="true">→</div>
+<div class="stage"><span>Jason gives explicit yes</span><small>Before merge/deploy</small></div>
+</div>
+<div class="rules">
+<span class="label">Race rules</span>
+<span class="chip">separate branches</span>
+<span class="chip">first clean wins</span>
+<span class="chip">one ship PR after pick</span>
+<span class="chip">Codex on all</span>
+<span class="chip">no merge without Jason yes</span>
+</div>
+</main>
+<footer><span>Iterate Consulting / Chicago Build Loop</span><span>Architecture · design only · HOLD live</span><span>03 / 06</span></footer>
+</div>
+</body>
+</html>

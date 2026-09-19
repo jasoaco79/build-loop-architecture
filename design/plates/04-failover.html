@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redundancy &amp; Failover — Iterate Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0A0A0B;--panel:#121214;--raised:#1A1A1E;--line:rgba(255,255,255,.08);--accent:#22D3EE;--text:#F5F5F5;--muted:#A1A1AA}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+#frame{width:1440px;height:900px;overflow:hidden;position:relative;padding:40px 64px;background:radial-gradient(ellipse at 68% 42%,rgba(34,211,238,.045),transparent 53%),var(--bg)}
+header{height:68px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start}
+.logo{width:210px;height:38px;object-fit:contain;object-position:left}
+.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}
+.header-note{padding-top:12px}.header-note span{color:var(--accent);margin-left:20px}
+main{padding-top:36px}
+.heading{display:flex;justify-content:space-between;align-items:flex-end}
+h1{font:500 58px/1.15 "Playfair Display",Georgia,serif;letter-spacing:-.035em;margin:14px 0 0}
+.heading p{font-size:13px;color:var(--muted);line-height:1.7;text-align:right;margin:0 0 3px}
+.layers{margin-top:29px;display:flex;flex-direction:column;gap:13px}
+.layer{display:grid;grid-template-columns:172px 1fr;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden}
+.layer-label{padding:24px 20px;border-right:1px solid var(--line)}
+.layer-label .index{font-size:11px;color:var(--accent);display:block;margin-bottom:12px}
+.layer-label h2{font-size:15px;line-height:1.4;font-weight:500;margin:0 0 7px}
+.layer-label p{font-size:10px;color:var(--muted);line-height:1.6;margin:0}
+.race{padding:20px 24px}
+.race-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px;font-size:11px;color:var(--muted)}
+.pill{border:1px solid var(--line);border-radius:20px;padding:7px 12px;color:var(--text);background:var(--raised)}
+.writers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.writer{height:77px;background:var(--raised);border:1px solid var(--line);border-radius:7px;padding:14px}
+.writer strong{display:block;font-size:13px;font-weight:500;margin-bottom:9px}
+.writer small{color:var(--accent);font-size:11px}
+.writer.unavailable{background:transparent;border-style:dashed}
+.writer.unavailable strong,.writer.unavailable small{color:var(--muted)}
+.writer small:before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:7px}
+.writer.unavailable small:before{background:none;border:1px solid var(--muted);width:6px;height:6px}
+.race-bottom{display:flex;justify-content:space-between;padding-top:16px;font-size:11px;color:var(--muted)}
+.race-bottom b{color:var(--text);font-weight:500}
+.gates{padding:24px;display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr;align-items:center}
+.gate{height:85px;padding:15px;border:1px solid var(--line);border-radius:7px;background:var(--raised)}
+.gate h3{font-size:13px;font-weight:500;margin:0 0 9px}
+.gate p{font-size:11px;line-height:1.55;color:var(--muted);margin:0}
+.arrow{text-align:center;color:var(--accent)}
+.handoff{padding:22px 24px;display:grid;grid-template-columns:258px 36px 1fr;align-items:center}
+.threshold{padding-right:20px}
+.threshold strong{font:500 35px/1 "Playfair Display",Georgia,serif;color:var(--accent)}
+.threshold span{font-size:11px;color:var(--muted);margin-left:10px}
+.meter{height:4px;background:rgba(255,255,255,.08);margin-top:14px;border-radius:8px;overflow:hidden}
+.meter i{display:block;height:100%;width:80%;background:var(--accent)}
+.destination{padding:16px 19px;background:var(--raised);border:1px solid rgba(34,211,238,.2);border-radius:7px}
+.destination .eyebrow{font-size:9px;margin-bottom:8px}
+.destination h3{font-size:19px;font-weight:500;letter-spacing:-.02em;margin:0 0 8px}
+.destination p{font-size:11px;color:var(--muted);margin:0}
+.note{display:flex;justify-content:space-between;margin-top:17px;font-size:11px;color:var(--muted)}
+.note b{font-weight:500;color:var(--text)}
+footer{position:absolute;bottom:29px;left:64px;right:64px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="frame">
+<header>
+<img class="logo" src="lockup-b.svg" alt="Iterate Consulting">
+<div class="eyebrow header-note">Chicago / Continuity architecture <span>HOLD LIVE</span></div>
+</header>
+<main>
+<div class="heading">
+<div><div class="eyebrow">04 / Redundancy &amp; failover</div><h1>A stalled lane isn’t a stalled loop.</h1></div>
+<p>Keep the race moving.<br>Never weaken the clean-PR gate.</p>
+</div>
+<section class="layers" aria-label="Layered redundancy architecture">
+<article class="layer">
+<div class="layer-label"><span class="index">01 / EXECUTION</span><h2>Writer resilience</h2><p>One unavailable.<br>Three still racing.</p></div>
+<div class="race">
+<div class="race-top"><span class="pill">Erlich · Chicago PM / PR router</span><span>Illustrative outage — the same rule applies to any writer</span></div>
+<div class="writers">
+<div class="writer unavailable"><strong>Cursor cloud</strong><small>Usage limit / offline</small></div>
+<div class="writer"><strong>pi / terra-gpt</strong><small>Keeps racing</small></div>
+<div class="writer"><strong>Antigravity</strong><small>Keeps racing</small></div>
+<div class="writer"><strong>Grok Build</strong><small>Keeps racing</small></div>
+</div>
+<div class="race-bottom"><span>If one writer hits a usage limit or is offline, <b>the other three keep racing.</b></span><span>Separate branches remain isolated.</span></div>
+</div>
+</article>
+<article class="layer">
+<div class="layer-label"><span class="index">02 / QUALITY</span><h2>Same ship gate</h2><p>Availability is not<br>evidence of quality.</p></div>
+<div class="gates">
+<div class="gate"><h3>Codex reviews each open PR</h3><p>Review-only. No writer bypass.</p></div>
+<div class="arrow" aria-hidden="true">→</div>
+<div class="gate"><h3>Erlich picks first clean</h3><p>Empty CI / billing skips are not “clean”.</p></div>
+<div class="arrow" aria-hidden="true">→</div>
+<div class="gate"><h3>Jason’s explicit yes</h3><p>Required before merge/deploy.</p></div>
+</div>
+</article>
+<article class="layer">
+<div class="layer-label"><span class="index">03 / HANDOFF</span><h2>Grok Bot usage</h2><p>Leftover-work path.<br>Separate from the race.</p></div>
+<div class="handoff">
+<div class="threshold"><strong>~80%</strong><span>Grok Bot usage</span><div class="meter" aria-label="Illustrative threshold: approximately 80 percent"><i></i></div></div>
+<div class="arrow" aria-hidden="true">→</div>
+<div class="destination">
+<div class="eyebrow">Leftover handoff</div>
+<h3>StarrClaw / popstarr / Neo</h3>
+<p>Erlich routes the handoff. No on-demand burn.</p>
+</div>
+</div>
+</article>
+</section>
+<div class="note"><span><b>Routing owner:</b> Erlich. <b>Coding owner:</b> Jian-Yang.</span><span>Threshold shown is a policy marker, not live telemetry.</span></div>
+</main>
+<footer><span>Iterate Consulting / Chicago Build Loop</span><span>Architecture · design only · HOLD live</span><span>04 / 06</span></footer>
+</div>
+</body>
+</html>

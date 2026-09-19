@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iterate Consulting — Lifecycle Arc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--void:#0A0A0B;--panel:#121214;--raised:#1A1A1E;--line:rgba(255,255,255,.08);--text:#F5F5F5;--muted:#A1A1AA;--cyan:#22D3EE}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--void);color:var(--text);font-family:Inter,system-ui,sans-serif}
+#frame{width:1440px;height:900px;overflow:hidden;position:relative;padding:40px 64px;background:radial-gradient(ellipse at 72% 48%,rgba(34,211,238,.04),transparent 52%),var(--void)}
+header{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between}
+.logo{width:210px;height:38px;object-fit:contain;object-position:left}
+.header-right{display:flex;align-items:center;gap:20px;padding-top:12px}
+.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}
+.hold{color:var(--cyan);border:1px solid rgba(34,211,238,.25);border-radius:20px;padding:6px 11px;font-size:10px;letter-spacing:.12em}
+.title-block{padding-top:32px;display:flex;align-items:flex-end;justify-content:space-between}
+.title-block .left .eyebrow{color:var(--muted);margin-bottom:0}
+h1{font-family:"Playfair Display",Georgia,serif;font-size:52px;line-height:1.15;font-weight:500;letter-spacing:-.035em;margin:14px 0 0}
+.subtitle{font-size:13px;color:var(--muted);line-height:1.7;text-align:right;margin:0 0 4px}
+.arc{position:relative;margin-top:28px;padding-top:36px}
+.skip{position:absolute;left:calc((100% - 108px)/4 + 18px);width:calc((100% - 108px)/4 + 36px);height:26px;top:0;border:1px dashed rgba(161,161,170,.35);border-bottom:0;border-radius:8px 8px 0 0}
+.skip span{position:absolute;left:50%;top:-8px;transform:translateX(-50%);white-space:nowrap;padding:0 10px;background:var(--void);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.skip:after{content:"";position:absolute;right:-4px;bottom:-1px;width:6px;height:6px;border-right:1px solid var(--muted);border-bottom:1px solid var(--muted);transform:rotate(45deg)}
+.stages{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px}
+.stage{height:340px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 20px 18px;position:relative;display:flex;flex-direction:column}
+.stage:not(:last-child):after{content:"→";position:absolute;right:-28px;top:155px;width:20px;text-align:center;font-size:15px;color:var(--cyan);z-index:2}
+.stage.final{border-color:rgba(34,211,238,.3);background:linear-gradient(155deg,rgba(34,211,238,.035),transparent),var(--panel)}
+.stage-top{display:flex;align-items:center;gap:12px}
+.number{display:flex;justify-content:center;align-items:center;width:32px;height:32px;flex-shrink:0;border:1px solid rgba(34,211,238,.25);border-radius:50%;color:var(--cyan);font-size:12px}
+h2{margin:0;font-size:11px;letter-spacing:.14em;font-weight:500;text-transform:uppercase;color:var(--muted)}
+.content{padding-top:22px;flex:1}
+.lead{font-size:18px;line-height:1.35;letter-spacing:-.025em;margin:0 0 12px;font-weight:500}
+.detail{font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+.detail strong{font-weight:500;color:var(--text)}
+.lane-label{display:inline-block;margin-top:16px;padding:6px 10px;border:1px solid var(--line);border-radius:5px;font-size:10px;color:var(--muted);letter-spacing:.04em}
+.writers{font-size:11px;line-height:1.7;color:var(--muted);margin:0 0 10px}
+.race{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:9px;font-size:10px;color:var(--muted)}
+.dots{display:flex;gap:3px}
+.dots i{display:block;width:4px;height:4px;border-radius:50%;background:var(--cyan)}
+.race b{font-weight:500;color:var(--cyan)}
+.role{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:10px;line-height:1.65;color:var(--muted)}
+.role strong{color:var(--text);font-weight:500}
+.gate{font-size:10px;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.no-ship{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:11px;color:var(--text)}
+.no-ship:before{content:"";height:5px;width:5px;background:var(--cyan);border-radius:50%}
+.lower{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;margin-top:22px;align-items:stretch}
+.principle{padding:16px 20px;background:var(--raised);border:1px solid var(--line);border-radius:10px}
+.small-label{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:10px}
+.principle p{margin:0;font-size:15px;letter-spacing:-.02em;line-height:1.55;font-weight:500}
+.sidepaths{display:flex;gap:12px}
+.sidepath{flex:1;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--panel)}
+.sidepath .label{font-size:11px;color:var(--text);margin-bottom:6px;font-weight:500}
+.sidepath p{font-size:10px;color:var(--muted);line-height:1.6;margin:0}
+.sidepath span{color:var(--cyan)}
+footer{position:absolute;bottom:29px;left:64px;right:64px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="frame">
+<header>
+<img class="logo" src="lockup-b.svg" alt="Iterate Consulting">
+<div class="header-right"><span class="eyebrow">Chicago / Lifecycle</span><span class="hold">HOLD LIVE</span></div>
+</header>
+
+<main>
+<section class="title-block">
+<div class="left">
+<div class="eyebrow">07 / Lifecycle arc</div>
+<h1>From concept to deployment.</h1>
+</div>
+<p class="subtitle">Architecture for Iterate Consulting · design only · HOLD live.<br>Four stages. Clear ownership. No auto-ship.</p>
+</section>
+
+<section class="arc" aria-label="Concept to Design to Execution to Deployment">
+<div class="skip"><span>Skip design if no UI</span></div>
+<div class="stages">
+<article class="stage concept">
+<div class="stage-top"><span class="number">01</span><h2>Concept</h2></div>
+<div class="content">
+<p class="lead">Ask lands<br>at Erlich.</p>
+<p class="detail">Brief framed.<br>Ready for design<br>or execution.</p>
+<div class="lane-label">Intake / brief</div>
+</div>
+<div class="role"><strong>Erlich</strong> — Chicago PM / PR router</div>
+</article>
+
+<article class="stage design">
+<div class="stage-top"><span class="number">02</span><h2>Design</h2></div>
+<div class="content">
+<p class="lead">If UI: Dinesh<br>shapes the plates.</p>
+<p class="detail">Open Design / Astra<br><strong>→ Jason locks plates</strong></p>
+<div class="lane-label">Design-only lane</div>
+</div>
+<div class="role"><strong>Dinesh</strong> — design-only</div>
+</article>
+
+<article class="stage execution">
+<div class="stage-top"><span class="number">03</span><h2>Execution</h2></div>
+<div class="content">
+<p class="lead">Jian-Yang launches<br>four concurrent writers.</p>
+<p class="writers">Separate branches<br>Cursor cloud · pi/terra-gpt<br>Antigravity · Grok Build</p>
+<p class="detail"><strong>Codex</strong> reviews each PR.<br><strong>Erlich</strong> picks first clean;<br>closes the other three.</p>
+<div class="race"><span class="dots" aria-label="Four parallel writers"><i></i><i></i><i></i><i></i></span><span>Race detail <b>→ plates 02 / 03</b></span></div>
+</div>
+<div class="role"><strong>Jian-Yang</strong> — coding owner · <strong>Codex</strong> — review-only</div>
+</article>
+
+<article class="stage final">
+<div class="stage-top"><span class="number">04</span><h2>Deployment</h2></div>
+<div class="content">
+<div class="gate">Human approval gate</div>
+<p class="lead">Jason explicit yes<br>→ merge</p>
+<p class="detail">Gilfoyle deploys if needed.</p>
+<div class="no-ship">No auto-ship</div>
+</div>
+<div class="role"><strong>Jason</strong> — explicit yes · <strong>Gilfoyle</strong> — deploy / infra</div>
+</article>
+</div>
+</section>
+
+<section class="lower" aria-label="Lifecycle principles and side paths">
+<div class="principle">
+<div class="small-label">One lifecycle / explicit handoffs</div>
+<p>Frame the ask. Lock the design. Race the build. Ship only with a human yes.</p>
+</div>
+<div class="sidepaths">
+<div class="sidepath">
+<div class="label">Failover</div>
+<p>Other writers keep racing.<br><span>→ plate 04</span></p>
+</div>
+<div class="sidepath">
+<div class="label">Dallas Slack overflow</div>
+<p>Overflow side path — not default race.<br><span>→ plate 05</span></p>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<span>Iterate Consulting / Chicago Build Loop</span>
+<span>Architecture · design only · HOLD live</span>
+<span>07 / 07</span>
+</footer>
+</div>
+</body>
+</html>
