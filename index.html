@@ -113,43 +113,46 @@
           <div class="phase"><span>Select &amp; authorize</span><b>05–06</b></div>
         </div>
 
-        <div class="flow desktop-flow" aria-label="Six-step build loop">
-          <article class="node">
-            <div class="num">01</div>
-            <h3>Ask lands<br>at Erlich.</h3>
-            <p>Chicago PM receives the ask and routes the work.</p>
-            <div class="tag">Entry / brief</div>
-          </article>
-          <article class="node">
-            <div class="num">02</div>
-            <h3>UI needs<br>design?</h3>
-            <p><strong>Dinesh</strong> → Open Design / Astra plates → <strong>Jason locks plates.</strong><br>No UI design needed? Continue.</p>
-            <div class="tag">Conditional / design-only</div>
-          </article>
-          <article class="node">
-            <div class="num">03</div>
-            <h3>Four writers.<br>Concurrent.</h3>
-            <p><strong>Jian-Yang</strong> starts FOUR writers on separate branches.</p>
-            <div class="tag">Fan-out / 4 branches</div>
-          </article>
-          <article class="node">
-            <div class="num">04</div>
-            <h3>Every PR<br>gets reviewed.</h3>
-            <p><strong>Codex</strong> reviews each PR when open. All four enter the review lane.</p>
-            <div class="tag">Review-only / every PR</div>
-          </article>
-          <article class="node">
-            <div class="num">05</div>
-            <h3>First clean<br>PR wins.</h3>
-            <p><strong>Erlich</strong> picks the first clean PR; closes the other three.</p>
-            <div class="tag">Converge / one ship PR</div>
-          </article>
-          <article class="node final">
-            <div class="num">06</div>
-            <h3>Jason yes.<br>Then merge.</h3>
-            <p><strong>Gilfoyle</strong> deploys if needed. Jason’s explicit yes is required before merge/deploy.</p>
-            <div class="tag">Human gate / no auto-ship</div>
-          </article>
+        <div class="cycle" aria-label="Six-step build loop, left-to-right cycle">
+          <div class="flow desktop-flow">
+            <article class="node">
+              <div class="num">01</div>
+              <h3>Ask lands<br>at Erlich.</h3>
+              <p>Chicago PM receives the ask and routes the work.</p>
+              <div class="tag">Entry / brief</div>
+            </article>
+            <article class="node">
+              <div class="num">02</div>
+              <h3>UI needs<br>design?</h3>
+              <p><strong>Dinesh</strong> → Open Design / Astra plates → <strong>Jason locks plates.</strong><br>No UI design needed? Continue.</p>
+              <div class="tag">Conditional / design-only</div>
+            </article>
+            <article class="node">
+              <div class="num">03</div>
+              <h3>Four writers.<br>Concurrent.</h3>
+              <p><strong>Jian-Yang</strong> starts FOUR writers on separate branches.</p>
+              <div class="tag">Fan-out / 4 branches</div>
+            </article>
+            <article class="node">
+              <div class="num">04</div>
+              <h3>Every PR<br>gets reviewed.</h3>
+              <p><strong>Codex</strong> reviews each PR when open. All four enter the review lane.</p>
+              <div class="tag">Review-only / every PR</div>
+            </article>
+            <article class="node">
+              <div class="num">05</div>
+              <h3>First clean<br>PR wins.</h3>
+              <p><strong>Erlich</strong> picks the first clean PR; closes the other three.</p>
+              <div class="tag">Converge / one ship PR</div>
+            </article>
+            <article class="node final">
+              <div class="num">06</div>
+              <h3>Jason yes.<br>Then merge.</h3>
+              <p><strong>Gilfoyle</strong> deploys if needed. Jason’s explicit yes is required before merge/deploy.</p>
+              <div class="tag">Human gate / no auto-ship</div>
+            </article>
+          </div>
+          <p class="cycle-return"><span>Next brief lands at Erlich · the loop continues</span></p>
         </div>
 
         <ol class="mobile-loop" aria-label="Six-step Chicago build loop">
@@ -234,7 +237,7 @@
             <div class="card-top"><span class="num">02</span><span class="parallel">Concurrent writer</span></div>
             <h3>pi / terra-gpt</h3>
             <p class="label">Harness + model</p>
-            <p class="model">pi CLI with terra/gpt</p>
+            <p class="model">pi CLI with terra/gpt <small class="config-note">Also configurable for Astra · gpt-6-astra via openai-codex on popstarr</small></p>
             <div class="branch"><span>Separate branch 02</span><span>PR → Codex</span></div>
           </article>
           <article class="card">
@@ -253,6 +256,22 @@
           </article>
         </div>
 
+        <aside class="overflow" aria-label="Optional fifth overflow seat">
+          <div class="overflow-id">
+            <span class="num">05</span>
+            <div>
+              <p class="eyebrow">Optional overflow seat</p>
+              <h3>Codex or Astra</h3>
+            </div>
+          </div>
+          <div class="choices" aria-label="Overflow choices">
+            <span class="choice">Codex</span>
+            <span class="or">or</span>
+            <span class="choice">Astra</span>
+          </div>
+          <p class="overflow-copy">Not default. Does not replace the four locked seats. Diagram capacity only — does not authorize Codex application PRs.</p>
+        </aside>
+
         <div class="review" aria-label="Convergence after the race">
           <div class="stage"><span>Codex reviews all</span><small>When each PR opens</small></div>
           <div class="arrow" aria-hidden="true">→</div>
@@ -267,6 +286,7 @@
           <span class="chip">first clean wins</span>
           <span class="chip">one ship PR after pick</span>
           <span class="chip">Codex on all</span>
+          <span class="chip">overflow not default</span>
           <span class="chip last">no merge without Jason yes</span>
         </div>
       </div>
@@ -334,10 +354,22 @@
                 <div class="meter" aria-label="Illustrative threshold: approximately 80 percent"><i></i></div>
               </div>
               <div class="arrow" aria-hidden="true">→</div>
-              <div class="destination">
-                <p class="eyebrow">Leftover handoff</p>
-                <h4>StarrClaw / popstarr / Neo</h4>
-                <p>Erlich routes the handoff. No on-demand burn.</p>
+              <div class="destinations">
+                <p class="eyebrow">Leftover handoff · Erlich routes · no on-demand burn</p>
+                <div class="dest-grid">
+                  <div class="destination">
+                    <h4>StarrClaw / popstarr / Neo</h4>
+                    <p>Existing leftover path</p>
+                  </div>
+                  <div class="destination">
+                    <h4>Dallas · Grok Bot sub 2</h4>
+                    <p>Overflow</p>
+                  </div>
+                  <div class="destination named">
+                    <h4>Florida · Hermes</h4>
+                    <p>Alternate overflow when named</p>
+                  </div>
+                </div>
               </div>
             </div>
           </article>
@@ -357,7 +389,25 @@
             <p class="eyebrow">05 / Cross-desk load balance</p>
             <h2 id="dallas-title" class="display">More capacity. Not another bot.</h2>
           </div>
-          <p class="lede">A CoS-to-CoS relay through Slack.<br>Dallas is the overflow path, not the default race.</p>
+          <p class="lede">A CoS-to-CoS relay through Slack.<br>Chicago stays the default race. Dallas is overflow. Florida / Hermes is alternate overflow when named.</p>
+        </div>
+
+        <div class="desk-map" aria-label="Desk routing">
+          <article class="desk default">
+            <p class="eyebrow">Chicago</p>
+            <h3>Default race</h3>
+            <p>Four locked writers. Unchanged.</p>
+          </article>
+          <article class="desk">
+            <p class="eyebrow">Dallas</p>
+            <h3>Overflow</h3>
+            <p>Grok Bot sub 2 · leftover handoff and desk overflow.</p>
+          </article>
+          <article class="desk optional" id="florida">
+            <p class="eyebrow">Florida</p>
+            <h3>Hermes</h3>
+            <p>Alternate overflow when named. Not default.</p>
+          </article>
         </div>
 
         <div class="trigger">
@@ -414,7 +464,7 @@
 
         <div class="boundary">
           <b>Overflow path, not default race.</b>
-          <span>No second Chicago coder bot. No change to Jason’s merge/deploy approval gate.</span>
+          <span>Dallas overflow. Florida / Hermes only when named. No second Chicago coder bot. No change to Jason’s merge/deploy approval gate.</span>
         </div>
       </div>
     </section>
@@ -484,8 +534,8 @@
               <p>Other writers keep racing.<br><span>→ plate 04</span></p>
             </a>
             <a class="sidepath" href="#dallas">
-              <p class="label">Dallas Slack overflow</p>
-              <p>Overflow side path — not default race.<br><span>→ plate 05</span></p>
+              <p class="label">Dallas / Florida overflow</p>
+              <p>Dallas overflow. Florida / Hermes when named.<br><span>→ plate 05</span></p>
             </a>
           </div>
         </div>
