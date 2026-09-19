@@ -113,7 +113,8 @@
           <div class="phase"><span>Select &amp; authorize</span><b>05–06</b></div>
         </div>
 
-        <div class="flow desktop-flow" aria-label="Six-step build loop">
+        <div class="loop-cycle" aria-label="Six-step build loop — left-to-right cycle">
+          <div class="flow desktop-flow" aria-label="Steps 01 through 06, left to right">
           <article class="node">
             <div class="num">01</div>
             <h3>Ask lands<br>at Erlich.</h3>
@@ -150,6 +151,15 @@
             <p><strong>Gilfoyle</strong> deploys if needed. Jason’s explicit yes is required before merge/deploy.</p>
             <div class="tag">Human gate / no auto-ship</div>
           </article>
+          </div>
+          <div class="loop-return" aria-hidden="true">
+            <span class="rail-cap start"></span>
+            <span class="rail"></span>
+            <span class="loop-return-label">Next ask · cycle returns to 01</span>
+            <span class="rail"></span>
+            <span class="rail-cap end"></span>
+            <span class="loop-return-arrow">↩</span>
+          </div>
         </div>
 
         <ol class="mobile-loop" aria-label="Six-step Chicago build loop">
@@ -216,13 +226,13 @@
             <p class="eyebrow">03 / Writer topology</p>
             <h2 id="writers-title" class="display">Four lanes. One finish.</h2>
           </div>
-          <p class="lede">Concurrent by design, isolated by branch.<br>Harness and model assignments stay explicit.</p>
+          <p class="lede">Four locked seats race by default.<br>Optional 5th overflow: Codex | Astra — only when named.</p>
         </div>
 
         <div class="owner"><span><b>Jian-Yang</b> · coding owner · starts FOUR concurrent writers</span></div>
         <div class="bus" aria-hidden="true"></div>
 
-        <div class="cards" aria-label="Four concurrent writer assignments">
+        <div class="cards" aria-label="Four concurrent locked writer assignments">
           <article class="card">
             <div class="card-top"><span class="num">01</span><span class="parallel">Concurrent writer</span></div>
             <h3>Cursor cloud</h3>
@@ -234,7 +244,7 @@
             <div class="card-top"><span class="num">02</span><span class="parallel">Concurrent writer</span></div>
             <h3>pi / terra-gpt</h3>
             <p class="label">Harness + model</p>
-            <p class="model">pi CLI with terra/gpt</p>
+            <p class="model">pi CLI with terra/gpt (default). Also configurable for <b>Astra</b> (<code>gpt-6-astra</code> via openai-codex on popstarr).</p>
             <div class="branch"><span>Separate branch 02</span><span>PR → Codex</span></div>
           </article>
           <article class="card">
@@ -250,6 +260,16 @@
             <p class="label">Harness + model</p>
             <p class="model">Grok Build on SuperGrok bucket</p>
             <div class="branch"><span>Separate branch 04</span><span>PR → Codex</span></div>
+          </article>
+        </div>
+
+        <div class="overflow-band">
+          <article class="card overflow-seat" aria-label="Optional fifth overflow writer seat">
+            <div class="card-top"><span class="num">05</span><span class="parallel">Optional · not default</span></div>
+            <h3>Codex <span class="choice-or">|</span> Astra</h3>
+            <p class="label">Overflow seat choices</p>
+            <p class="model">Optional 5th writer when named — does not replace the four locked seats. Choices: <b>Codex</b> or <b>Astra</b>.</p>
+            <div class="branch"><span>Overflow branch 05</span><span>Not default race</span></div>
           </article>
         </div>
 
@@ -336,8 +356,8 @@
               <div class="arrow" aria-hidden="true">→</div>
               <div class="destination">
                 <p class="eyebrow">Leftover handoff</p>
-                <h4>StarrClaw / popstarr / Neo</h4>
-                <p>Erlich routes the handoff. No on-demand burn.</p>
+                <h4>Dallas · Florida</h4>
+                <p><b>Dallas</b> (Grok Bot sub 2) and/or <b>Florida</b> (Hermes). Erlich routes. StarrClaw / popstarr / Neo stay available.</p>
               </div>
             </div>
           </article>
@@ -357,7 +377,7 @@
             <p class="eyebrow">05 / Cross-desk load balance</p>
             <h2 id="dallas-title" class="display">More capacity. Not another bot.</h2>
           </div>
-          <p class="lede">A CoS-to-CoS relay through Slack.<br>Dallas is the overflow path, not the default race.</p>
+          <p class="lede">Chicago is the default race. Dallas is overflow.<br>Florida / Hermes is alternate overflow when named.</p>
         </div>
 
         <div class="trigger">
@@ -396,7 +416,7 @@
               <p>Receives the relayed brief for Dallas full-stack work. Coordinates the Dallas-side desk response.</p>
               <span class="role">Full-stack fit / e.g. Bolton on pi</span>
             </div>
-            <p class="lane-foot">Additional desk capacity, outside the default race</p>
+            <p class="lane-foot">Overflow desk · Grok Bot sub 2</p>
           </article>
         </div>
 
@@ -413,8 +433,8 @@
         </div>
 
         <div class="boundary">
-          <b>Overflow path, not default race.</b>
-          <span>No second Chicago coder bot. No change to Jason’s merge/deploy approval gate.</span>
+          <b>Chicago default · Dallas overflow · Florida / Hermes alternate.</b>
+          <span>Leftovers also route to Dallas (Grok Bot sub 2) and/or Florida (Hermes) when named. No second Chicago coder bot. No change to Jason’s merge/deploy approval gate.</span>
         </div>
       </div>
     </section>
