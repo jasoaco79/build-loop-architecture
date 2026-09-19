@@ -933,12 +933,18 @@ section:before {
 
 .handoff {
   padding: 22px 24px;
-  display: grid;
-  grid-template-columns: 220px 36px 1fr;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.threshold { padding-right: 20px; }
+.threshold {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+  align-items: baseline;
+  padding-right: 0;
+}
 
 .threshold strong {
   font: 500 35px/1 "Playfair Display", Georgia, serif;
@@ -952,9 +958,10 @@ section:before {
 }
 
 .meter {
+  grid-column: 1 / -1;
   height: 4px;
   background: rgba(255, 255, 255, 0.08);
-  margin-top: 14px;
+  margin-top: 6px;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -967,16 +974,22 @@ section:before {
 }
 
 .threshold-note {
-  margin: 12px 0 0;
+  margin: 0;
+  justify-self: end;
+  text-align: right;
   font-size: 11px;
   line-height: 1.55;
   color: var(--muted);
 }
 
+.handoff > .arrow {
+  display: none;
+}
+
 .destinations {
   display: grid;
   grid-template-columns: 1fr auto 1fr auto 1fr;
-  gap: 10px;
+  gap: 12px;
   align-items: stretch;
 }
 
@@ -1013,8 +1026,6 @@ section:before {
   font-size: 9px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
 }
 
 .note {
@@ -1483,11 +1494,11 @@ section:before {
   }
 
   .destinations .andor {
-    writing-mode: horizontal-tb;
-    transform: none;
     text-align: center;
     padding: 2px 0;
   }
+
+  .handoff > .arrow { display: block; }
 
   .heading { align-items: flex-start; }
   .lede { text-align: left; }
@@ -1717,6 +1728,7 @@ section:before {
   }
 
   .notebook .right { text-align: left; }
+  .threshold-note { justify-self: start; text-align: left; }
   .arrow { transform: rotate(90deg); }
   .site-footer .wrap { gap: 8px; }
 }
