@@ -191,6 +191,7 @@ section {
   position: relative;
   padding: 72px 0 80px;
   border-top: 1px solid var(--line);
+  scroll-margin-top: calc(var(--header) + 8px);
 }
 
 section:before {

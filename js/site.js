@@ -4,6 +4,7 @@
   var header = document.querySelector("[data-site-header]");
   var toggle = document.querySelector("[data-nav-toggle]");
   var nav = document.querySelector("[data-site-nav]");
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var links = nav ? Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]')) : [];
   var sections = links
     .map(function (link) {
@@ -27,7 +28,14 @@
     });
 
     nav.addEventListener("click", function (event) {
-      if (event.target.closest("a")) closeNav();
+      var link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+      var target = document.querySelector(link.getAttribute("href"));
+      closeNav();
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      if (history.replaceState) history.replaceState(null, "", link.getAttribute("href"));
     });
 
     document.addEventListener("keydown", function (event) {
