@@ -57,7 +57,7 @@ Static single page matching locked plates:
 | --- | --- |
 | 01 | Hero / operating thesis + five-panel overview |
 | 02 | Six-step loop with phase bands + roles |
-| 03 | Four locked writers: Cursor cloud · pi / terra-gpt · Antigravity · Grok Build. Optional 5th overflow seat: Codex **or** Astra — not the default race. |
+| 03 | **Four locked. Fifth optional.** Locked seats: Cursor cloud · pi / terra-gpt · Antigravity · Grok Build. Seat 05 overflow: Codex **or** Astra — Erlich opens only. HANDOFF strip: Codex stays review-only. |
 | 04 | Failover: three keep racing; clean gate; leftover handoff → StarrClaw / popstarr / Neo **and/or** Dallas (Grok Bot subscription 2) **and/or** Florida (Hermes in-house agents, when named). |
 | 05 | Dallas CoS overflow via Slack (`#iterate-ord-dfw-rsw-cos`, mirrors `#iterate-chicago-dallas-cos`) |
 | 06 | Mobile compression of hero + 6-step loop (390-class viewport) |
@@ -82,15 +82,19 @@ No npm. No build step. No `.env`.
 **Writers (harness + model exact)**
 
 1. Cursor cloud — Cursor cloud agents (account default model)
-2. pi / terra-gpt — pi CLI with terra/gpt **(default)**. Configurable: Astra (`gpt-6-astra` / openai-codex provider on popstarr).
+2. pi / terra-gpt — pi CLI · terra/gpt **default**. Can also run Astra (`gpt-6-astra` / openai-codex on popstarr). Default label stays terra-gpt.
 3. Antigravity — Antigravity CLI (agy); Google AI Pro
 4. Grok Build — Grok Build on SuperGrok bucket
 
 **Optional 5th overflow writer seat (not the default race)**
 
-One optional seat when named. Two options shown: **Codex** or **Astra**. Label as optional / overflow. **Erlich opens this seat only** — it is not a fifth concurrent default lane. Chicago’s four-writer race stays the default.
+Plate 03 lock (Dinesh, 2026-09-19): title **Four locked. Fifth optional.** Seat 05 is one dashed overflow row — **Codex** or **Astra**. Not default. **Erlich opens only** when a job needs a fifth race lane. Astra carries a Not default badge. Do not draw a fifth locked concurrent lane.
 
 ### Tension: Codex review-only lock vs optional 5th seat
+
+HANDOFF strip (locked copy):
+
+> House lock stays Codex review-only on every PR. An optional microsite writer seat for Codex or Astra does **not** change that lock — review-only remains the rule for the race.
 
 House process lock is unchanged:
 
@@ -112,7 +116,7 @@ If copy ever reads as if Codex now writes by default, that is a defect. Fix the 
 | Gilfoyle | deploy / infra |
 | Jason | explicit yes before merge/deploy |
 
-**Race rules:** separate branches · first clean wins · one ship PR after pick · Codex on all · no merge without Jason yes.
+**Race rules:** four locked default · optional 5th overflow · separate branches · first clean wins · Codex review-only on all · no merge without Jason yes.
 
 Empty CI / billing skips are **not** “clean”.
 

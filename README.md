@@ -26,7 +26,7 @@ No npm. No build. No secrets.
 | --- | --- |
 | 01 | Hero / thesis |
 | 02 | Six-step loop |
-| 03 | Writers — four locked seats + optional 5th overflow (Codex or Astra) |
+| 03 | Writers — Four locked. Fifth optional. Seat 05 Codex or Astra (Erlich opens only) |
 | 04 | Failover / leftover routes — StarrClaw · Dallas (Grok Bot sub 2) · Florida (Hermes) |
 | 05 | Dallas Slack overflow |
 | 06 | Mobile compression of hero + loop |

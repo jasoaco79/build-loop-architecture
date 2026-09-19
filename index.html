@@ -214,39 +214,39 @@
         <div class="heading">
           <div>
             <p class="eyebrow">03 / Writer topology</p>
-            <h2 id="writers-title" class="display">Four lanes. One finish.</h2>
+            <h2 id="writers-title" class="display">Four locked. Fifth optional.</h2>
           </div>
-          <p class="lede">Concurrent by design, isolated by branch.<br>Four locked seats are the default race. An optional fifth is overflow only.</p>
+          <p class="lede">Default race stays four concurrent lanes.<br>Optional overflow seat is never the house default.</p>
         </div>
 
-        <div class="owner"><span><b>Jian-Yang</b> · coding owner · starts FOUR concurrent writers</span></div>
+        <div class="owner"><span><b>Jian-Yang</b> · coding owner · starts FOUR concurrent writers · optional 5th only when Erlich opens it</span></div>
         <div class="bus" aria-hidden="true"></div>
 
-        <div class="cards" aria-label="Four concurrent writer assignments">
+        <div class="cards" aria-label="Four locked writer assignments">
           <article class="card">
-            <div class="card-top"><span class="num">01</span><span class="parallel">Concurrent writer</span></div>
+            <div class="card-top"><span class="num">01</span><span class="parallel">Locked</span></div>
             <h3>Cursor cloud</h3>
             <p class="label">Harness + model</p>
             <p class="model">Cursor cloud agents (account default model)</p>
             <div class="branch"><span>Separate branch 01</span><span>PR → Codex</span></div>
           </article>
           <article class="card">
-            <div class="card-top"><span class="num">02</span><span class="parallel">Concurrent writer</span></div>
+            <div class="card-top"><span class="num">02</span><span class="parallel">Locked</span></div>
             <h3>pi / terra-gpt</h3>
             <p class="label">Harness + model</p>
-            <p class="model">pi CLI with terra/gpt <span class="default-mark">default</span></p>
-            <p class="config-note">Configurable: Astra — <b>gpt-6-astra</b> / openai-codex provider on popstarr.</p>
+            <p class="model">pi CLI · terra/gpt default</p>
+            <p class="config-note">Can also run Astra (gpt-6-astra / openai-codex on popstarr). Default label stays terra-gpt.</p>
             <div class="branch"><span>Separate branch 02</span><span>PR → Codex</span></div>
           </article>
           <article class="card">
-            <div class="card-top"><span class="num">03</span><span class="parallel">Concurrent writer</span></div>
+            <div class="card-top"><span class="num">03</span><span class="parallel">Locked</span></div>
             <h3>Antigravity</h3>
             <p class="label">Harness + model</p>
             <p class="model">Antigravity CLI (agy); Google AI Pro</p>
             <div class="branch"><span>Separate branch 03</span><span>PR → Codex</span></div>
           </article>
           <article class="card">
-            <div class="card-top"><span class="num">04</span><span class="parallel">Concurrent writer</span></div>
+            <div class="card-top"><span class="num">04</span><span class="parallel">Locked</span></div>
             <h3>Grok Build</h3>
             <p class="label">Harness + model</p>
             <p class="model">Grok Build on SuperGrok bucket</p>
@@ -254,47 +254,45 @@
           </article>
         </div>
 
-        <aside class="overflow-seat" aria-label="Optional fifth overflow writer seat">
-          <div class="overflow-banner">
-            <span class="eyebrow">Optional / overflow</span>
-            <p><b>Not the default race.</b> Erlich opens this optional fifth seat only when named. The four locked seats stay the concurrent default.</p>
+        <aside class="seat-05" aria-label="Optional overflow writer seat 05">
+          <div class="seat-05-label">
+            <span class="eyebrow">Seat 05</span>
+            <h3>Optional overflow</h3>
+            <p>Not default. Erlich opens only when a job needs a fifth race lane.</p>
           </div>
-          <article class="overflow-card">
-            <div class="card-top">
-              <span class="num">05</span>
-              <span class="parallel overflow-tag">Overflow writer</span>
+          <div class="seat-05-option">
+            <h4>Codex</h4>
+            <p>Optional writer harness for this microsite seat only — separate branch if opened.</p>
+          </div>
+          <div class="seat-05-option">
+            <div class="seat-05-option-top">
+              <h4>Astra</h4>
+              <span class="not-default">Not default</span>
             </div>
-            <h3>Fifth seat</h3>
-            <p class="label">Choose one option</p>
-            <div class="overflow-options">
-              <div class="option">
-                <strong>Codex</strong>
-                <small>Overflow writer option</small>
-              </div>
-              <span class="or">OR</span>
-              <div class="option">
-                <strong>Astra</strong>
-                <small>Overflow writer option</small>
-              </div>
-            </div>
-            <p class="overflow-lock">House lock unchanged: Codex stays review-only on every PR. This optional seat does not change that process.</p>
-          </article>
+            <p>Optional writer option (gpt-6-astra). Overflow race seat, not a locked default lane.</p>
+          </div>
         </aside>
 
+        <div class="handoff-tension" aria-label="Handoff tension">
+          <span class="eyebrow">Handoff tension</span>
+          <p>House lock stays Codex review-only on every PR. An optional microsite writer seat for Codex or Astra does <b>not</b> change that lock — review-only remains the rule for the race.</p>
+        </div>
+
         <div class="review" aria-label="Convergence after the race">
-          <div class="stage"><span>Codex reviews all</span><small>When each PR opens</small></div>
+          <div class="stage"><span>Codex reviews all</span><small>Review-only · every PR</small></div>
           <div class="arrow" aria-hidden="true">→</div>
-          <div class="stage"><span>Erlich picks first clean</span><small>Closes other three</small></div>
+          <div class="stage"><span>Erlich picks first clean</span><small>Closes other race PRs</small></div>
           <div class="arrow" aria-hidden="true">→</div>
           <div class="stage"><span>Jason gives explicit yes</span><small>Before merge/deploy</small></div>
         </div>
 
         <div class="rules">
           <span class="label">Race rules</span>
+          <span class="chip">four locked default</span>
+          <span class="chip">optional 5th overflow</span>
           <span class="chip">separate branches</span>
           <span class="chip">first clean wins</span>
-          <span class="chip">one ship PR after pick</span>
-          <span class="chip">Codex on all</span>
+          <span class="chip last">Codex review-only on all</span>
           <span class="chip last">no merge without Jason yes</span>
         </div>
       </div>
