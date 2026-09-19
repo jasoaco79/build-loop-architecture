@@ -10,7 +10,7 @@
   --line-strong: rgba(255, 255, 255, 0.14);
   --radius: 1.25rem;
   --radius-sm: 0.85rem;
-  --max: 72rem;
+  --max: 78rem;
   --pad: clamp(1.15rem, 3.4vw, 3rem);
   --serif: "Playfair Display", "Times New Roman", Times, serif;
   --sans: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -203,17 +203,17 @@ main,
   color: var(--dim);
 }
 
-.display,
-.display-mobile {
+.display {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.28em;
   margin: 0;
   font-family: var(--serif);
   font-weight: 400;
+  font-size: clamp(3.4rem, 8.4vw, 6.4rem);
   letter-spacing: -0.03em;
   line-height: 0.92;
-}
-
-.display {
-  font-size: clamp(3.4rem, 8.4vw, 6.4rem);
 }
 
 .display-chicago {
@@ -221,17 +221,13 @@ main,
 }
 
 .display-buildloop,
-.display-mobile .cyan,
+.display-build,
+.display-loop,
 .channel,
 .channel-inline,
 .live,
 .meter-value {
   color: var(--cyan);
-}
-
-.display-mobile {
-  display: none;
-  font-size: clamp(3.2rem, 16vw, 4.4rem);
 }
 
 .display-sm {
@@ -486,6 +482,9 @@ main,
 .loop-row .phase {
   margin: 0 0 1.4rem;
   color: var(--dim);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 
 .loop-row h3 {
@@ -560,6 +559,10 @@ main,
   min-height: 16.5rem;
   display: flex;
   flex-direction: column;
+}
+
+.writer-grid h3 {
+  font-size: 1.7rem;
 }
 
 .writer-grid .num {
@@ -820,6 +823,34 @@ main,
   color: var(--cyan);
 }
 
+.writers-tree {
+  position: relative;
+}
+
+.writers-tree .owner-pill {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.writers-tree .writer-grid {
+  padding-top: 1.15rem;
+}
+
+.writers-tree .owner-pill::after {
+  content: "";
+  position: absolute;
+  left: 12.5%;
+  right: 12.5%;
+  top: 2.55rem;
+  height: 1.15rem;
+  border-left: 1px solid rgba(34, 211, 238, 0.35);
+  border-right: 1px solid rgba(34, 211, 238, 0.35);
+  border-top: 1px solid rgba(34, 211, 238, 0.35);
+  pointer-events: none;
+}
+
 .loop-rail,
 .mobile-only,
 .mobile-meta {
@@ -892,12 +923,32 @@ main,
 
   .mobile-only,
   .loop-rail,
-  .mobile-meta,
-  .display-mobile {
+  .mobile-meta {
     display: block;
   }
 
   .display {
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(3.2rem, 16vw, 4.4rem);
+  }
+
+  .display-buildloop,
+  .display-build,
+  .display-loop {
+    display: block;
+  }
+
+  .display-build {
+    color: var(--fg);
+  }
+
+  .display-loop {
+    color: var(--cyan);
+    text-transform: capitalize;
+  }
+
+  .writers-tree .owner-pill::after {
     display: none;
   }
 
@@ -927,12 +978,12 @@ main,
     border-left: 1px solid rgba(34, 211, 238, 0.35);
   }
 
-  .loop-rail li {
+  .loop-rail > li {
     position: relative;
     margin: 0 0 0.75rem;
   }
 
-  .loop-rail li::before {
+  .loop-rail > li::before {
     content: "";
     position: absolute;
     left: -0.97rem;
