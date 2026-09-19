@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicago Build Loop — Iterate Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0A0A0B;--panel:#121214;--raised:#1A1A1E;--line:rgba(255,255,255,.08);--accent:#22D3EE;--text:#F5F5F5;--muted:#A1A1AA}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+#frame{width:1440px;height:900px;overflow:hidden;position:relative;padding:40px 64px;background:radial-gradient(ellipse at 78% 45%,rgba(34,211,238,.055),transparent 46%),var(--bg)}
+#frame:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:80px 80px;opacity:.2;pointer-events:none}
+header,main,footer{position:relative}
+header{height:68px;display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{width:210px;height:38px;object-fit:contain;object-position:left}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.status{display:flex;gap:20px;align-items:center;padding-top:10px}
+.hold{color:var(--accent);border:1px solid rgba(34,211,238,.25);border-radius:20px;padding:6px 11px;font-size:10px;letter-spacing:.12em}
+main{padding-top:53px}
+h1{font:500 88px/1.05 "Playfair Display",Georgia,serif;letter-spacing:-.045em;margin:18px 0}
+h1 span{color:var(--accent)}
+.thesis{font-size:21px;line-height:1.5;margin:0 0 14px;letter-spacing:-.025em}
+.subtitle{font-size:12px;color:var(--muted);margin:0}
+.architecture{margin-top:44px;height:274px;display:grid;grid-template-columns:234px 38px 294px 38px 194px 38px 210px 38px 228px;align-items:center}
+.panel{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:22px;height:204px;position:relative}
+.panel.active{border-color:rgba(34,211,238,.3)}
+.number{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid var(--line);border-radius:50%;font-size:11px;color:var(--accent);margin-bottom:20px}
+.panel h2{font-size:19px;font-weight:500;margin:0 0 9px;letter-spacing:-.025em}
+.panel p{font-size:12px;color:var(--muted);line-height:1.65;margin:0}
+.connector{height:1px;background:rgba(255,255,255,.2);position:relative}
+.connector:after{content:"";position:absolute;right:1px;top:-3px;width:6px;height:6px;border-top:1px solid var(--accent);border-right:1px solid var(--accent);transform:rotate(45deg)}
+.writer-stack{height:274px;padding:17px;background:var(--raised)}
+.writer-stack .eyebrow{margin:0 0 14px}
+.writer{height:43px;background:var(--panel);border:1px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;margin:6px 0;font-size:12px}
+.writer small{color:var(--muted);font-size:10px}
+.dot{display:inline-block;width:5px;height:5px;background:var(--accent);border-radius:50%;margin-right:8px}
+.diagram-label{margin-top:15px;display:flex;justify-content:space-between;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.role{font-size:10px;color:var(--muted);padding:9px 12px;border:1px solid var(--line);border-radius:30px;background:var(--panel)}
+.role b{color:var(--text);font-weight:500}
+footer{position:absolute;bottom:29px;left:64px;right:64px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="frame">
+<header>
+<img class="logo" src="lockup-b.svg" alt="Iterate Consulting">
+<div class="status"><span class="eyebrow">Architecture / Chicago</span><span class="hold">HOLD LIVE</span></div>
+</header>
+<main>
+<div class="eyebrow">01 / The operating thesis</div>
+<h1>Chicago <span>Build Loop</span></h1>
+<p class="thesis">Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes.</p>
+<p class="subtitle">Architecture for Iterate Consulting · design only · HOLD live</p>
+
+<section class="architecture" aria-label="Build architecture overview">
+<article class="panel">
+<div class="number">01</div>
+<h2>Frame the ask.</h2>
+<p>Erlich routes the brief.<br>Dinesh designs when needed.<br>Jason locks the plates.</p>
+</article>
+<div class="connector" aria-hidden="true"></div>
+<article class="panel writer-stack">
+<div class="eyebrow">02 / Jian-Yang fans out</div>
+<div class="writer"><span><i class="dot"></i>Cursor cloud</span><small>branch 01</small></div>
+<div class="writer"><span><i class="dot"></i>pi / terra-gpt</span><small>branch 02</small></div>
+<div class="writer"><span><i class="dot"></i>Antigravity</span><small>branch 03</small></div>
+<div class="writer"><span><i class="dot"></i>Grok Build</span><small>branch 04</small></div>
+</article>
+<div class="connector" aria-hidden="true"></div>
+<article class="panel">
+<div class="number">03</div>
+<h2>Review all.</h2>
+<p>Codex reviews each PR<br>when open.<br>Review-only.</p>
+</article>
+<div class="connector" aria-hidden="true"></div>
+<article class="panel">
+<div class="number">04</div>
+<h2>Pick one.</h2>
+<p>Erlich takes the first<br>clean PR. Closes the<br>other three.</p>
+</article>
+<div class="connector" aria-hidden="true"></div>
+<article class="panel active">
+<div class="number">05</div>
+<h2>Explicit yes.</h2>
+<p>Jason authorizes merge.<br>Gilfoyle deploys if needed,<br>with Jason’s yes.</p>
+</article>
+</section>
+<div class="diagram-label"><span>One brief → four independent branches</span><span>One clean ship PR → human approval</span></div>
+<div class="roles" aria-label="Roles">
+<span class="role"><b>Erlich</b> · Chicago PM / PR router</span>
+<span class="role"><b>Dinesh</b> · design-only</span>
+<span class="role"><b>Jian-Yang</b> · coding owner</span>
+<span class="role"><b>Codex</b> · review-only</span>
+<span class="role"><b>Gilfoyle</b> · deploy / infra</span>
+<span class="role"><b>Jason</b> · explicit yes before merge/deploy</span>
+</div>
+</main>
+<footer><span>Iterate Consulting / Architecture plates</span><span>Design only — no live execution</span><span>01 / 06</span></footer>
+</div>
+</body>
+</html>
