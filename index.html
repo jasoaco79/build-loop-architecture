@@ -113,43 +113,46 @@
           <div class="phase"><span>Select &amp; authorize</span><b>05–06</b></div>
         </div>
 
-        <div class="flow desktop-flow" aria-label="Six-step build loop">
-          <article class="node">
-            <div class="num">01</div>
-            <h3>Ask lands<br>at Erlich.</h3>
-            <p>Chicago PM receives the ask and routes the work.</p>
-            <div class="tag">Entry / brief</div>
-          </article>
-          <article class="node">
-            <div class="num">02</div>
-            <h3>UI needs<br>design?</h3>
-            <p><strong>Dinesh</strong> → Open Design / Astra plates → <strong>Jason locks plates.</strong><br>No UI design needed? Continue.</p>
-            <div class="tag">Conditional / design-only</div>
-          </article>
-          <article class="node">
-            <div class="num">03</div>
-            <h3>Four writers.<br>Concurrent.</h3>
-            <p><strong>Jian-Yang</strong> starts FOUR writers on separate branches.</p>
-            <div class="tag">Fan-out / 4 branches</div>
-          </article>
-          <article class="node">
-            <div class="num">04</div>
-            <h3>Every PR<br>gets reviewed.</h3>
-            <p><strong>Codex</strong> reviews each PR when open. All four enter the review lane.</p>
-            <div class="tag">Review-only / every PR</div>
-          </article>
-          <article class="node">
-            <div class="num">05</div>
-            <h3>First clean<br>PR wins.</h3>
-            <p><strong>Erlich</strong> picks the first clean PR; closes the other three.</p>
-            <div class="tag">Converge / one ship PR</div>
-          </article>
-          <article class="node final">
-            <div class="num">06</div>
-            <h3>Jason yes.<br>Then merge.</h3>
-            <p><strong>Gilfoyle</strong> deploys if needed. Jason’s explicit yes is required before merge/deploy.</p>
-            <div class="tag">Human gate / no auto-ship</div>
-          </article>
+        <div class="cycle" aria-label="Six-step build loop, left-to-right cycle">
+          <div class="flow desktop-flow">
+            <article class="node">
+              <div class="num">01</div>
+              <h3>Ask lands<br>at Erlich.</h3>
+              <p>Chicago PM receives the ask and routes the work.</p>
+              <div class="tag">Entry / brief</div>
+            </article>
+            <article class="node">
+              <div class="num">02</div>
+              <h3>UI needs<br>design?</h3>
+              <p><strong>Dinesh</strong> → Open Design / Astra plates → <strong>Jason locks plates.</strong><br>No UI design needed? Continue.</p>
+              <div class="tag">Conditional / design-only</div>
+            </article>
+            <article class="node">
+              <div class="num">03</div>
+              <h3>Four writers.<br>Concurrent.</h3>
+              <p><strong>Jian-Yang</strong> starts FOUR writers on separate branches.</p>
+              <div class="tag">Fan-out / 4 branches</div>
+            </article>
+            <article class="node">
+              <div class="num">04</div>
+              <h3>Every PR<br>gets reviewed.</h3>
+              <p><strong>Codex</strong> reviews each PR when open. All four enter the review lane.</p>
+              <div class="tag">Review-only / every PR</div>
+            </article>
+            <article class="node">
+              <div class="num">05</div>
+              <h3>First clean<br>PR wins.</h3>
+              <p><strong>Erlich</strong> picks the first clean PR; closes the other three.</p>
+              <div class="tag">Converge / one ship PR</div>
+            </article>
+            <article class="node final">
+              <div class="num">06</div>
+              <h3>Jason yes.<br>Then merge.</h3>
+              <p><strong>Gilfoyle</strong> deploys if needed. Jason’s explicit yes is required before merge/deploy.</p>
+              <div class="tag">Human gate / no auto-ship</div>
+            </article>
+          </div>
+          <p class="cycle-return"><span>Next brief lands at Erlich · the loop continues</span></p>
         </div>
 
         <ol class="mobile-loop" aria-label="Six-step Chicago build loop">

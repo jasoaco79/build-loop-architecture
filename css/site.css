@@ -376,10 +376,17 @@ section:before {
 
 .phase b { color: var(--accent); font-weight: 400; }
 
+.cycle {
+  position: relative;
+  padding-bottom: 8px;
+}
+
 .desktop-flow {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .node {
@@ -401,6 +408,68 @@ section:before {
   color: var(--accent);
   z-index: 2;
   font-size: 15px;
+}
+
+.cycle .node:first-child:before,
+.cycle .node.final:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  width: 1px;
+  height: 20px;
+  background: rgba(34, 211, 238, 0.35);
+  z-index: 1;
+}
+
+.cycle .node.final:after {
+  right: auto;
+  top: auto;
+  font-size: 0;
+}
+
+.cycle-return {
+  position: relative;
+  height: 46px;
+  margin: 0 calc((100% - 80px) / 12);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.cycle-return:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 12px;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  border-top: 0;
+  border-radius: 0 0 12px 12px;
+}
+
+.cycle-return:after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: -5px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid var(--accent);
+  border-right: 1px solid var(--accent);
+  transform: rotate(-45deg);
+}
+
+.cycle-return span {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  padding: 0 12px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .node .num { margin-bottom: 22px; }
@@ -1407,7 +1476,6 @@ section:before {
   .display { font-size: 44px; }
 
   .architecture,
-  .desktop-flow,
   .writers .cards,
   .writer-row,
   .stages,
@@ -1415,9 +1483,65 @@ section:before {
     grid-template-columns: 1fr 1fr;
   }
 
+  .desktop-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 28px;
+  }
+
+  .cycle {
+    padding-left: 22px;
+  }
+
+  .cycle:before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: 36px;
+    bottom: 20px;
+    width: 1px;
+    background: rgba(34, 211, 238, 0.35);
+  }
+
+  .cycle:after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 32px;
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid var(--accent);
+    border-right: 1px solid var(--accent);
+    transform: rotate(-45deg);
+  }
+
+  .cycle .node { min-height: 250px; }
+
+  .cycle .node:first-child:before { display: none; }
+
+  .cycle .node:not(:last-child):after {
+    display: block;
+    top: 115px;
+  }
+
+  .cycle .node:nth-child(3):after {
+    content: "↓";
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -24px;
+    width: 16px;
+    margin-left: -8px;
+  }
+
+  .cycle-return {
+    margin-left: 22px;
+    margin-right: calc((100% - 32px) / 6);
+  }
+
+  .cycle-return:after { display: none; }
+
   .architecture { gap: 16px; }
   .architecture .connector,
-  .node:not(:last-child):after,
   .writers .card:before,
   .bus,
   .lifecycle .stage:not(:last-child):after,
@@ -1510,6 +1634,7 @@ section:before {
   .architecture,
   .diagram-label,
   .roles,
+  .cycle,
   .desktop-flow,
   .phases,
   .guardrail,

@@ -10,9 +10,8 @@ Static architecture microsite for **how Iterate Consulting’s Chicago desk ship
 | --- | --- |
 | Repo | https://github.com/jasoaco79/build-loop-architecture |
 | Design SoT | Branch `design/sot` — plates 01–07 HTML/PNG + `design/BRIEF.md` + lockup B. Locked 2026-09-19. |
-| Live host | **None.** HOLD live. Do not attach a custom domain. Do not restage. |
-| Preview host | `https://devstack.grimstarr.com` — Gilfoyle restages **only** after Jason merge yes. |
-| This pass | Additive update on a PR against `main` (`a9991bb`): optional 5th overflow seat, Pi Astra config note, leftover destinations Dallas / Florida. |
+| Intended public host | `https://stack.iterateconsulting.ai` — Gilfoyle attaches DNS / restages **only** after Jason merge yes. Do not cut DNS from this pickup. |
+| This pass | Additive update on a PR against `main` (`a9991bb`): optional 5th overflow seat, Pi Astra config note, leftover Dallas / Florida, looped cycle diagram. |
 
 **Thesis (locked):** Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes.
 
@@ -24,7 +23,7 @@ Static architecture microsite for **how Iterate Consulting’s Chicago desk ship
 
 ## Jason locks
 
-Do not merge. Do not deploy. Do not restage. Do not touch Cloudflare DNS, Pages, Workers, or the VPS. No `iterateconsulting.ai` cutover. **No Duck cutover.** Gilfoyle restages `https://devstack.grimstarr.com` only after Jason merge yes.
+Do not merge. Do not deploy. Do not restage. Do not cut DNS. Do not touch Cloudflare DNS, Pages, Workers, or the VPS from this pickup. **No Duck cutover.** Gilfoyle attaches `https://stack.iterateconsulting.ai` only after Jason merge yes.
 
 Four locked writer seats stay exact. This pass **adds** (does not replace): optional 5th overflow seat; Pi Astra config note; leftover destinations Dallas (Grok Bot sub 2) and Florida (Hermes). Cyan `#22D3EE` stays the only accent.
 
@@ -59,7 +58,7 @@ Static single page matching locked plates, plus the additive notes below:
 | Plate | Section |
 | --- | --- |
 | 01 | Hero / operating thesis + five-panel overview |
-| 02 | Six-step loop with phase bands + roles |
+| 02 | Six-step **looped** diagram: left-to-right cycle 01→06 with return rail to Erlich. Not a vertical list on desktop/tablet. |
 | 03 | Four locked writers: Cursor cloud · pi / terra-gpt · Antigravity · Grok Build. Optional 5th overflow seat (Codex or Astra) — not default, does not replace 01–04. |
 | 04 | Failover: three keep racing; clean gate; leftover handoff → StarrClaw / popstarr / Neo **and** Dallas (Grok Bot sub 2) **and/or** Florida (Hermes) |
 | 05 | Cross-desk overflow: Chicago = default race (unchanged). Dallas = overflow. Florida / Hermes = alternate overflow when named. Slack (`#iterate-ord-dfw-rsw-cos`, mirrors `#iterate-chicago-dallas-cos`) |
@@ -128,16 +127,16 @@ Dallas Slack overflow remains a CoS-to-CoS relay, **not** the default race. `gro
 
 ## Leftovers / eyeball
 
-- Eyeball desktop (~1440): hero five-panel row, 6-step loop, four writer cards + optional 5th overflow strip, failover leftover destinations (StarrClaw / Dallas / Florida), Dallas swimlanes + desk map, lifecycle skip-design arc.
+- Eyeball desktop (~1440): hero five-panel row, **horizontal looped cycle** (01→06 + return to Erlich), four writer cards + optional 5th overflow strip, failover leftover destinations (StarrClaw / Dallas / Florida), Dallas swimlanes + desk map, lifecycle skip-design arc.
 - Eyeball phone (~390): plate 06 — lockup + HOLD LIVE, thesis, stacked 6-step loop with writer tags on step 03, Jason yes in cyan.
-- Eyeball tablet (~900): diagrams stack; no horizontal scroll.
+- Eyeball tablet (~900): loop stays a left-to-right cycle (3+3 wrap + return rail), not a vertical list only.
 - Confirm accent is only `#22D3EE`. No second brand color.
 - Confirm HOLD LIVE remains visible in the header.
 - Confirm four locked seats remain; 5th seat is optional overflow, not default.
 - Confirm Codex stays review-only in process copy.
 - Do not add wrangler / Pages / custom-domain files.
 - Do not deploy Duck or change popstarr.
-- Do not restage `https://devstack.grimstarr.com`.
+- Do not restage or cut DNS for `https://stack.iterateconsulting.ai`.
 
 ## Secrets
 
