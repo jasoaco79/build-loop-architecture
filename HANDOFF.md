@@ -11,7 +11,7 @@ Static architecture microsite for **how Iterate Consulting’s Chicago desk ship
 | Repo | https://github.com/jasoaco79/build-loop-architecture |
 | Design SoT | Branch `design/sot` — plates 01–07 HTML/PNG + `design/BRIEF.md` + lockup B. Locked 2026-09-19. |
 | Live host | **None.** HOLD live. Do not attach a custom domain. |
-| This pass | Implement plates 01–07 as a scrollable static site on a PR against `main`. |
+| This pass | Optional 5th writer seat + Dallas/Florida leftover routing notes on a PR against `main`. HOLD merge / restage / Duck cutover. |
 
 **Thesis (locked):** Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes.
 
@@ -57,9 +57,9 @@ Static single page matching locked plates:
 | --- | --- |
 | 01 | Hero / operating thesis + five-panel overview |
 | 02 | Six-step loop with phase bands + roles |
-| 03 | Four concurrent writers: Cursor cloud · pi / terra-gpt · Antigravity · Grok Build |
-| 04 | Failover: three keep racing; clean gate; ~80% Grok Bot → StarrClaw / popstarr / Neo |
-| 05 | Dallas CoS overflow via Slack (`#iterate-ord-dfw-rsw-cos`, mirrors `#iterate-chicago-dallas-cos`) |
+| 03 | Four locked writers: Cursor cloud · pi / terra-gpt · Antigravity · Grok Build — plus optional 5th overflow seat Codex \| Astra (not default) |
+| 04 | Failover: three keep racing; clean gate; ~80% Grok Bot leftovers → Dallas (Grok Bot sub 2) and/or Florida (Hermes); StarrClaw / popstarr / Neo remain available |
+| 05 | Cross-desk overflow: Chicago = default race; Dallas = overflow (Grok Bot sub 2); Florida / Hermes = alternate overflow when named. Slack `#iterate-ord-dfw-rsw-cos` (mirrors `#iterate-chicago-dallas-cos`) |
 | 06 | Mobile compression of hero + 6-step loop (390-class viewport) |
 | 07 | Lifecycle: Concept → Design → Execution → Deployment |
 
@@ -82,9 +82,13 @@ No npm. No build step. No `.env`.
 **Writers (harness + model exact)**
 
 1. Cursor cloud — Cursor cloud agents (account default model)
-2. pi / terra-gpt — pi CLI with terra/gpt
+2. pi / terra-gpt — pi CLI with terra/gpt (**default**). Also configurable for **Astra** (`gpt-6-astra` via openai-codex on popstarr).
 3. Antigravity — Antigravity CLI (agy); Google AI Pro
 4. Grok Build — Grok Build on SuperGrok bucket
+
+**Optional 5th overflow seat (not default, does not replace the four):** Codex **or** Astra — only when named.
+
+**Codex stays review-only.** House process still has Codex as review-only. The optional 5th writer on the diagram does **not** authorize Codex application PRs.
 
 **People**
 
@@ -101,11 +105,17 @@ No npm. No build step. No `.env`.
 
 Empty CI / billing skips are **not** “clean”.
 
-Dallas is overflow, **not** the default race. `grok-desk CURRENT.md` remains the week notebook handshake.
+**Desk topology**
+
+- **Chicago** = default race (unchanged)
+- **Dallas** = overflow (Grok Bot sub 2)
+- **Florida / Hermes** = alternate overflow when named
+
+Leftovers / handoff also → Dallas and/or Florida. StarrClaw / popstarr / Neo remain available. `grok-desk CURRENT.md` remains the week notebook handshake.
 
 ## Leftovers / eyeball
 
-- Eyeball desktop (~1440): hero five-panel row, 6-step loop, four writer cards, failover layers, Dallas swimlanes, lifecycle skip-design arc.
+- Eyeball desktop (~1440): hero five-panel row, 6-step loop, four locked writer cards + optional Codex|Astra overflow band, failover layers with Dallas/Florida leftover handoff, Dallas swimlanes (Florida alternate), lifecycle skip-design arc.
 - Eyeball phone (~390): plate 06 — lockup + HOLD LIVE, thesis, stacked 6-step loop with writer tags on step 03, Jason yes in cyan.
 - Eyeball tablet (~900): diagrams stack; no horizontal scroll.
 - Confirm accent is only `#22D3EE`. No second brand color.
@@ -119,4 +129,4 @@ None. Do not add API keys, pixels, Formspree, or env files.
 
 ## Tip
 
-First clean wins. Empty CI is not clean. HOLD live. No Duck cutover. Jason yes before merge.
+First clean wins. Empty CI is not clean. Optional 5th Codex|Astra is not default and does not authorize Codex application PRs. Chicago default · Dallas overflow · Florida/Hermes alternate. HOLD live. No Duck cutover. Jason yes before merge.
