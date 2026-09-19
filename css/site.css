@@ -528,7 +528,7 @@ section:before {
 }
 
 .writers .card {
-  min-height: 302px;
+  min-height: 338px;
   padding: 24px;
   background: var(--panel);
   border: 1px solid var(--line);
@@ -590,7 +590,32 @@ section:before {
   font-size: 14px;
   line-height: 1.7;
   margin: 0;
-  min-height: 55px;
+  min-height: 48px;
+}
+
+.default-mark {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 7px;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 12px;
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  vertical-align: 2px;
+}
+
+.config-note {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 52px;
+}
+
+.config-note b {
+  color: var(--text);
+  font-weight: 500;
 }
 
 .branch {
@@ -607,6 +632,114 @@ section:before {
 }
 
 .branch span:last-child { color: var(--accent); }
+
+.overflow-seat {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(420px, 1.4fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.overflow-banner {
+  padding: 22px 24px;
+  background: var(--raised);
+  border: 1px dashed rgba(34, 211, 238, 0.28);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overflow-banner .eyebrow {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.overflow-banner p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0;
+}
+
+.overflow-banner b {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.overflow-card {
+  min-height: 0;
+  padding: 22px 24px 20px;
+  background: var(--panel);
+  border: 1px dashed rgba(34, 211, 238, 0.28);
+  border-radius: 12px;
+}
+
+.overflow-card .card-top { margin-bottom: 16px; }
+
+.overflow-tag {
+  color: var(--accent);
+}
+
+.overflow-tag:before {
+  background: none;
+  border: 1px solid var(--accent);
+  width: 4px;
+  height: 4px;
+}
+
+.overflow-card h3 {
+  font-size: 23px;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+.overflow-options {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  margin: 4px 0 16px;
+}
+
+.overflow-options .option {
+  min-height: 72px;
+  padding: 14px 16px;
+  background: var(--raised);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.overflow-options .option strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.overflow-options .option small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.overflow-options .or {
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.overflow-lock {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+}
 
 .review {
   margin-top: 26px;
@@ -801,7 +934,7 @@ section:before {
 .handoff {
   padding: 22px 24px;
   display: grid;
-  grid-template-columns: 258px 36px 1fr;
+  grid-template-columns: 220px 36px 1fr;
   align-items: center;
 }
 
@@ -833,17 +966,35 @@ section:before {
   background: var(--accent);
 }
 
+.threshold-note {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.destinations {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 10px;
+  align-items: stretch;
+}
+
 .destination {
-  padding: 16px 19px;
+  padding: 14px 15px;
   background: var(--raised);
   border: 1px solid rgba(34, 211, 238, 0.2);
   border-radius: 7px;
 }
 
-.destination .eyebrow { font-size: 9px; margin-bottom: 8px; }
+.destination.overflow {
+  border-style: dashed;
+}
+
+.destination .eyebrow { font-size: 9px; margin-bottom: 8px; color: var(--accent); }
 
 .destination h4 {
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.02em;
   margin: 0 0 8px;
@@ -853,6 +1004,17 @@ section:before {
   font-size: 11px;
   color: var(--muted);
   margin: 0;
+  line-height: 1.5;
+}
+
+.destinations .andor {
+  align-self: center;
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
 
 .note {
@@ -1313,9 +1475,18 @@ section:before {
   .notebook,
   .lower,
   .layer,
-  .heading {
+  .heading,
+  .overflow-seat,
+  .destinations {
     grid-template-columns: 1fr;
     display: grid;
+  }
+
+  .destinations .andor {
+    writing-mode: horizontal-tb;
+    transform: none;
+    text-align: center;
+    padding: 2px 0;
   }
 
   .heading { align-items: flex-start; }
@@ -1516,7 +1687,17 @@ section:before {
   .stages,
   .sidepaths { grid-template-columns: 1fr; display: grid; }
 
-  .writers .card { min-height: 220px; }
+  .writers .card { min-height: 240px; }
+
+  .overflow-options {
+    grid-template-columns: 1fr;
+  }
+
+  .overflow-options .or {
+    text-align: center;
+  }
+
+  .config-note { margin-bottom: 56px; }
   .lane { min-height: 0; }
   .lifecycle .stage { min-height: 0; }
 

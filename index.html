@@ -216,7 +216,7 @@
             <p class="eyebrow">03 / Writer topology</p>
             <h2 id="writers-title" class="display">Four lanes. One finish.</h2>
           </div>
-          <p class="lede">Concurrent by design, isolated by branch.<br>Harness and model assignments stay explicit.</p>
+          <p class="lede">Concurrent by design, isolated by branch.<br>Four locked seats are the default race. An optional fifth is overflow only.</p>
         </div>
 
         <div class="owner"><span><b>Jian-Yang</b> · coding owner · starts FOUR concurrent writers</span></div>
@@ -234,7 +234,8 @@
             <div class="card-top"><span class="num">02</span><span class="parallel">Concurrent writer</span></div>
             <h3>pi / terra-gpt</h3>
             <p class="label">Harness + model</p>
-            <p class="model">pi CLI with terra/gpt</p>
+            <p class="model">pi CLI with terra/gpt <span class="default-mark">default</span></p>
+            <p class="config-note">Configurable: Astra — <b>gpt-6-astra</b> / openai-codex provider on popstarr.</p>
             <div class="branch"><span>Separate branch 02</span><span>PR → Codex</span></div>
           </article>
           <article class="card">
@@ -252,6 +253,33 @@
             <div class="branch"><span>Separate branch 04</span><span>PR → Codex</span></div>
           </article>
         </div>
+
+        <aside class="overflow-seat" aria-label="Optional fifth overflow writer seat">
+          <div class="overflow-banner">
+            <span class="eyebrow">Optional / overflow</span>
+            <p><b>Not the default race.</b> One optional fifth writer seat when named. The four locked seats stay the concurrent default.</p>
+          </div>
+          <article class="overflow-card">
+            <div class="card-top">
+              <span class="num">05</span>
+              <span class="parallel overflow-tag">Overflow writer</span>
+            </div>
+            <h3>Fifth seat</h3>
+            <p class="label">Choose one option</p>
+            <div class="overflow-options">
+              <div class="option">
+                <strong>Codex</strong>
+                <small>Overflow writer option</small>
+              </div>
+              <span class="or">OR</span>
+              <div class="option">
+                <strong>Astra</strong>
+                <small>Overflow writer option</small>
+              </div>
+            </div>
+            <p class="overflow-lock">House lock unchanged: Codex stays review-only on every PR. This optional seat does not change that process.</p>
+          </article>
+        </aside>
 
         <div class="review" aria-label="Convergence after the race">
           <div class="stage"><span>Codex reviews all</span><small>When each PR opens</small></div>
@@ -325,19 +353,34 @@
           <article class="layer">
             <div class="layer-label">
               <span class="index">03 / HANDOFF</span>
-              <h3>Grok Bot usage</h3>
-              <p>Leftover-work path.<br>Separate from the race.</p>
+              <h3>Leftover routes</h3>
+              <p>Separate from the race.<br>Chicago four stay default.</p>
             </div>
             <div class="handoff">
               <div class="threshold">
                 <strong>~80%</strong><span>Grok Bot usage</span>
                 <div class="meter" aria-label="Illustrative threshold: approximately 80 percent"><i></i></div>
+                <p class="threshold-note">Erlich routes leftover work. No on-demand burn.</p>
               </div>
               <div class="arrow" aria-hidden="true">→</div>
-              <div class="destination">
-                <p class="eyebrow">Leftover handoff</p>
-                <h4>StarrClaw / popstarr / Neo</h4>
-                <p>Erlich routes the handoff. No on-demand burn.</p>
+              <div class="destinations" aria-label="Leftover handoff destinations">
+                <article class="destination">
+                  <p class="eyebrow">Existing leftover</p>
+                  <h4>StarrClaw / popstarr / Neo</h4>
+                  <p>Chicago leftover path. Separate from the four-writer race.</p>
+                </article>
+                <span class="andor">and/or</span>
+                <article class="destination overflow">
+                  <p class="eyebrow">Overflow · not default</p>
+                  <h4>Dallas</h4>
+                  <p>Grok Bot subscription 2. Overflow desk — not the default race.</p>
+                </article>
+                <span class="andor">and/or</span>
+                <article class="destination overflow">
+                  <p class="eyebrow">Alternate overflow · when named</p>
+                  <h4>Florida</h4>
+                  <p>Hermes in-house agents. Alternate overflow path when named.</p>
+                </article>
               </div>
             </div>
           </article>
@@ -345,7 +388,7 @@
 
         <div class="note">
           <span><b>Routing owner:</b> Erlich. <b>Coding owner:</b> Jian-Yang.</span>
-          <span>Threshold shown is a policy marker, not live telemetry.</span>
+          <span>Leftover routes: StarrClaw / popstarr / Neo · Dallas (Grok Bot sub 2) · Florida (Hermes, when named). Threshold is a policy marker, not live telemetry.</span>
         </div>
       </div>
     </section>

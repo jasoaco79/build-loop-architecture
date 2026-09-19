@@ -10,8 +10,8 @@ Static architecture microsite for **how Iterate Consulting’s Chicago desk ship
 | --- | --- |
 | Repo | https://github.com/jasoaco79/build-loop-architecture |
 | Design SoT | Branch `design/sot` — plates 01–07 HTML/PNG + `design/BRIEF.md` + lockup B. Locked 2026-09-19. |
-| Live host | **None.** HOLD live. Do not attach a custom domain. |
-| This pass | Implement plates 01–07 as a scrollable static site on a PR against `main`. |
+| Live host | `https://devstack.grimstarr.com` may already show tip `a9991bb`. **HOLD live restage.** Do not attach a new custom domain. |
+| This pass | Optional 5th overflow writer seat (Codex **or** Astra), pi Astra config note, leftover routes to Dallas / Florida. PR against `main`. |
 
 **Thesis (locked):** Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes.
 
@@ -23,7 +23,7 @@ Static architecture microsite for **how Iterate Consulting’s Chicago desk ship
 
 ## Jason locks
 
-Do not merge. Do not deploy. Do not touch Cloudflare DNS, Pages, Workers, or the VPS. No `iterateconsulting.ai` cutover. **No Duck cutover.**
+Do not merge. Do not restage live. Do not touch Cloudflare DNS, Pages, Workers, or the VPS. No `iterateconsulting.ai` cutover. **No Duck cutover.** Erlich picks; Jason says yes; **then Gilfoyle restages.**
 
 Plates 01–07 are locked. Copy, roles, writer harness/model labels, Slack rooms, and cyan `#22D3EE` stay exact.
 
@@ -57,8 +57,8 @@ Static single page matching locked plates:
 | --- | --- |
 | 01 | Hero / operating thesis + five-panel overview |
 | 02 | Six-step loop with phase bands + roles |
-| 03 | Four concurrent writers: Cursor cloud · pi / terra-gpt · Antigravity · Grok Build |
-| 04 | Failover: three keep racing; clean gate; ~80% Grok Bot → StarrClaw / popstarr / Neo |
+| 03 | Four locked writers: Cursor cloud · pi / terra-gpt · Antigravity · Grok Build. Optional 5th overflow seat: Codex **or** Astra — not the default race. |
+| 04 | Failover: three keep racing; clean gate; leftover handoff → StarrClaw / popstarr / Neo **and/or** Dallas (Grok Bot subscription 2) **and/or** Florida (Hermes in-house agents, when named). |
 | 05 | Dallas CoS overflow via Slack (`#iterate-ord-dfw-rsw-cos`, mirrors `#iterate-chicago-dallas-cos`) |
 | 06 | Mobile compression of hero + 6-step loop (390-class viewport) |
 | 07 | Lifecycle: Concept → Design → Execution → Deployment |
@@ -82,9 +82,24 @@ No npm. No build step. No `.env`.
 **Writers (harness + model exact)**
 
 1. Cursor cloud — Cursor cloud agents (account default model)
-2. pi / terra-gpt — pi CLI with terra/gpt
+2. pi / terra-gpt — pi CLI with terra/gpt **(default)**. Configurable: Astra (`gpt-6-astra` / openai-codex provider on popstarr).
 3. Antigravity — Antigravity CLI (agy); Google AI Pro
 4. Grok Build — Grok Build on SuperGrok bucket
+
+**Optional 5th overflow writer seat (not the default race)**
+
+One optional seat when named. Two options shown: **Codex** or **Astra**. Label as optional / overflow. Do not draw a fifth concurrent default lane. Chicago’s four-writer race stays the default.
+
+### Tension: Codex review-only lock vs optional 5th seat
+
+House process lock is unchanged:
+
+- Codex is **review-only on every PR**.
+- The optional 5th writer seat on the microsite (Codex as an overflow *option*) does **not** change that process lock.
+- Do not rewrite the thesis to “five writers race.”
+- Do not treat Codex as a default concurrent writer. Review-only remains the house rule even if the overflow seat is pictured.
+
+If copy ever reads as if Codex now writes by default, that is a defect. Fix the label, not the process.
 
 **People**
 
@@ -103,15 +118,24 @@ Empty CI / billing skips are **not** “clean”.
 
 Dallas is overflow, **not** the default race. `grok-desk CURRENT.md` remains the week notebook handshake.
 
+**Leftover / handoff / failover routes** (Erlich routes; separate from the Chicago four-writer race):
+
+- StarrClaw / popstarr / Neo — existing leftover path
+- **Dallas** — Grok Bot subscription 2. Overflow, not default.
+- **Florida** — Hermes in-house agents. Alternate overflow path **when named**.
+
+Chicago four-writer race stays the default. Use “and/or” — leftover work may go to one or more of these, not a new default race.
+
 ## Leftovers / eyeball
 
-- Eyeball desktop (~1440): hero five-panel row, 6-step loop, four writer cards, failover layers, Dallas swimlanes, lifecycle skip-design arc.
+- Eyeball desktop (~1440): hero five-panel row, 6-step loop, four writer cards, optional 5th overflow seat (Codex or Astra), failover leftover routes (StarrClaw / Dallas / Florida), Dallas swimlanes, lifecycle skip-design arc.
 - Eyeball phone (~390): plate 06 — lockup + HOLD LIVE, thesis, stacked 6-step loop with writer tags on step 03, Jason yes in cyan.
 - Eyeball tablet (~900): diagrams stack; no horizontal scroll.
 - Confirm accent is only `#22D3EE`. No second brand color.
 - Confirm HOLD LIVE remains visible in the header.
 - Do not add wrangler / Pages / custom-domain files.
 - Do not deploy Duck or change popstarr.
+- Do not restage live. After Erlich/Jason merge, Gilfoyle restages.
 
 ## Secrets
 
@@ -119,4 +143,4 @@ None. Do not add API keys, pixels, Formspree, or env files.
 
 ## Tip
 
-First clean wins. Empty CI is not clean. HOLD live. No Duck cutover. Jason yes before merge.
+First clean wins. Empty CI is not clean. HOLD live restage. No Duck cutover. Erlich/Jason merge, then Gilfoyle restages.

@@ -8,7 +8,7 @@ Plates locked 2026-09-19 (SoT on `design/sot`). Lockup B. Accent cyan `#22D3EE`.
 
 ## HOLD
 
-Design-only. **Do not deploy live.** No custom domain. No Cloudflare Pages/Workers cutover. **No Duck cutover.** No DNS. No merge/deploy without Jason’s explicit yes.
+Design-only. **HOLD live restage.** No custom domain. No Cloudflare Pages/Workers cutover. **No Duck cutover.** No DNS. Erlich/Jason merge, then Gilfoyle restages.
 
 ## Local
 
@@ -26,8 +26,8 @@ No npm. No build. No secrets.
 | --- | --- |
 | 01 | Hero / thesis |
 | 02 | Six-step loop |
-| 03 | Writers — Cursor cloud · pi / terra-gpt · Antigravity · Grok Build |
-| 04 | Failover |
+| 03 | Writers — four locked seats + optional 5th overflow (Codex or Astra) |
+| 04 | Failover / leftover routes — StarrClaw · Dallas (Grok Bot sub 2) · Florida (Hermes) |
 | 05 | Dallas Slack overflow |
 | 06 | Mobile compression of hero + loop |
 | 07 | Lifecycle |
