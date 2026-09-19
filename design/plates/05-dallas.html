@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dallas Desk Overflow — Iterate Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0A0A0B;--panel:#121214;--raised:#1A1A1E;--line:rgba(255,255,255,.08);--accent:#22D3EE;--text:#F5F5F5;--muted:#A1A1AA}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+#frame{width:1440px;height:900px;overflow:hidden;position:relative;padding:40px 64px;background:radial-gradient(ellipse at 50% 48%,rgba(34,211,238,.045),transparent 52%),var(--bg)}
+header{height:68px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start}
+.logo{width:210px;height:38px;object-fit:contain;object-position:left}
+.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}
+.header-note{padding-top:12px}.header-note span{color:var(--accent);margin-left:20px}
+main{padding-top:35px}
+.heading{display:flex;justify-content:space-between;align-items:flex-end}
+h1{font:500 58px/1.15 "Playfair Display",Georgia,serif;letter-spacing:-.035em;margin:14px 0 0}
+.heading p{font-size:13px;color:var(--muted);line-height:1.7;text-align:right;margin:0 0 3px}
+.trigger{margin-top:26px;border:1px solid var(--line);border-radius:8px;background:var(--raised);padding:15px 20px;display:flex;align-items:center;gap:22px;font-size:12px}
+.trigger .eyebrow{font-size:9px}
+.or{color:var(--accent);font-size:10px;letter-spacing:.12em}
+.swimlanes{margin-top:20px;display:grid;grid-template-columns:370px 532px 370px;gap:20px;position:relative}
+.lane{height:331px;border:1px solid var(--line);border-radius:12px;background:var(--panel);position:relative;padding:20px}
+.lane.bridge{background:linear-gradient(180deg,rgba(34,211,238,.025),transparent),var(--panel)}
+.lane-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.lane-head h2{font-size:13px;font-weight:500;margin:0}
+.lane-head span{font-size:10px;color:var(--muted)}
+.step{margin-top:24px}
+.step-top{display:flex;align-items:center;gap:10px}
+.num{width:27px;height:27px;border-radius:50%;border:1px solid rgba(34,211,238,.25);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0}
+.step h3{font-size:21px;letter-spacing:-.03em;font-weight:500;margin:0}
+.step p{font-size:12px;line-height:1.8;color:var(--muted);margin:15px 0}
+.role{display:inline-block;padding:7px 10px;border-radius:20px;background:var(--raised);border:1px solid var(--line);font-size:10px;color:var(--muted)}
+.channel{margin-top:18px;padding:15px 13px;border:1px solid rgba(34,211,238,.25);border-radius:7px;background:var(--raised)}
+.channel strong{font-size:17px;font-weight:500;letter-spacing:-.035em;color:var(--accent);display:block;margin-bottom:8px;white-space:nowrap}
+.channel span{font-size:10px;color:var(--muted)}
+.mirror{font-size:11px;color:var(--muted);line-height:1.8;margin-top:14px}
+.mirror b{color:var(--text);font-weight:400}
+.link-arrow{position:absolute;top:165px;width:22px;color:var(--accent);text-align:center;z-index:2;font-size:21px;background:var(--bg)}
+.link-arrow.one{left:369px}.link-arrow.two{left:921px}
+.lane-foot{position:absolute;bottom:18px;left:20px;right:20px;padding-top:13px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.08em;color:var(--muted)}
+.notebook{margin-top:20px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;border:1px solid var(--line);border-radius:8px;background:var(--raised);padding:19px 23px}
+.notebook h3{font-size:13px;font-weight:500;margin:0 0 7px}
+.notebook p{font-size:11px;color:var(--muted);margin:0}
+.notebook .center{padding:10px 20px;border:1px solid rgba(34,211,238,.2);border-radius:24px;color:var(--accent);font-size:12px}
+.notebook .right{text-align:right}
+.boundary{display:flex;justify-content:space-between;align-items:center;margin-top:22px;font-size:12px}
+.boundary b{font-weight:500;color:var(--accent)}
+.boundary span{color:var(--muted)}
+footer{position:absolute;bottom:29px;left:64px;right:64px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="frame">
+<header>
+<img class="logo" src="lockup-b.svg" alt="Iterate Consulting">
+<div class="eyebrow header-note">Chicago ↔ Dallas / Desk bridge <span>HOLD LIVE</span></div>
+</header>
+<main>
+<div class="heading">
+<div><div class="eyebrow">05 / Cross-desk load balance</div><h1>More capacity. Not another bot.</h1></div>
+<p>A CoS-to-CoS relay through Slack.<br>Dallas is the overflow path, not the default race.</p>
+</div>
+<div class="trigger">
+<span class="eyebrow">Route to Dallas when</span>
+<span>Chicago capacity is tight</span>
+<span class="or">OR</span>
+<span>The job fits Dallas full-stack · e.g. Bolton on pi</span>
+</div>
+<section class="swimlanes" aria-label="Chicago, Slack bridge, and Dallas swimlanes">
+<article class="lane">
+<div class="lane-head"><h2>Chicago</h2><span>Origin desk</span></div>
+<div class="step">
+<div class="step-top"><span class="num">01</span><h3>Chicago CoS</h3></div>
+<p>Recognizes the capacity constraint or Dallas fit. Relays the brief to Dallas CoS in the Slack room.</p>
+<span class="role">Brief relay / desk coordination</span>
+</div>
+<div class="lane-foot">Local four-writer loop remains the default</div>
+</article>
+<div class="link-arrow one" aria-hidden="true">↔</div>
+<article class="lane bridge">
+<div class="lane-head"><h2>Slack bridge</h2><span>Shared coordination room</span></div>
+<div class="step">
+<div class="step-top"><span class="num">02</span><h3>Chicago CoS ↔ Dallas CoS</h3></div>
+<div class="channel"><strong>#iterate-ord-dfw-rsw-cos</strong><span>Relay the brief here · CoS-to-CoS bridge</span></div>
+<div class="mirror">CoS mirrors also use<br><b>#iterate-chicago-dallas-cos</b></div>
+</div>
+<div class="lane-foot">A desk handoff, not a second Chicago coder bot</div>
+</article>
+<div class="link-arrow two" aria-hidden="true">↔</div>
+<article class="lane">
+<div class="lane-head"><h2>Dallas</h2><span>Overflow desk</span></div>
+<div class="step">
+<div class="step-top"><span class="num">03</span><h3>Dallas CoS</h3></div>
+<p>Receives the relayed brief for Dallas full-stack work. Coordinates the Dallas-side desk response.</p>
+<span class="role">Full-stack fit / e.g. Bolton on pi</span>
+</div>
+<div class="lane-foot">Additional desk capacity, outside the default race</div>
+</article>
+</section>
+<section class="notebook" aria-label="Week notebook handshake">
+<div><h3>grok-desk CURRENT.md</h3><p>Remains the week notebook handshake.</p></div>
+<div class="center">Chicago CoS ↔ Dallas CoS</div>
+<div class="right"><h3>Slack carries the relay.</h3><p>The notebook handshake stays in place.</p></div>
+</section>
+<div class="boundary"><b>Overflow path, not default race.</b><span>No second Chicago coder bot. No change to Jason’s merge/deploy approval gate.</span></div>
+</main>
+<footer><span>Iterate Consulting / Chicago Build Loop</span><span>Architecture · design only · HOLD live</span><span>05 / 06</span></footer>
+</div>
+</body>
+</html>
