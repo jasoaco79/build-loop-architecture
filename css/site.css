@@ -528,7 +528,7 @@ section:before {
 }
 
 .writers .card {
-  min-height: 302px;
+  min-height: 334px;
   padding: 24px;
   background: var(--panel);
   border: 1px solid var(--line);
@@ -590,7 +590,70 @@ section:before {
   font-size: 14px;
   line-height: 1.7;
   margin: 0;
-  min-height: 55px;
+  min-height: 78px;
+}
+
+.config-note {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.overflow {
+  margin-top: 18px;
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: var(--raised);
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: minmax(220px, 1.15fr) auto minmax(240px, 1.35fr);
+  gap: 22px;
+  align-items: center;
+}
+
+.overflow-id {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.overflow h3 {
+  font-size: 19px;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  margin: 6px 0 0;
+}
+
+.choices {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.choice {
+  font-size: 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 8px 14px;
+  color: var(--text);
+  background: var(--panel);
+}
+
+.overflow .or {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.overflow-copy {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0;
 }
 
 .branch {
@@ -801,8 +864,19 @@ section:before {
 .handoff {
   padding: 22px 24px;
   display: grid;
-  grid-template-columns: 258px 36px 1fr;
-  align-items: center;
+  grid-template-columns: 220px 36px 1fr;
+  align-items: start;
+}
+
+.destinations .eyebrow {
+  font-size: 9px;
+  margin: 0 0 12px;
+}
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .threshold { padding-right: 20px; }
@@ -834,16 +908,20 @@ section:before {
 }
 
 .destination {
-  padding: 16px 19px;
+  padding: 16px 15px;
   background: var(--raised);
-  border: 1px solid rgba(34, 211, 238, 0.2);
+  border: 1px solid var(--line);
   border-radius: 7px;
+}
+
+.destination.named {
+  border-color: rgba(34, 211, 238, 0.2);
 }
 
 .destination .eyebrow { font-size: 9px; margin-bottom: 8px; }
 
 .destination h4 {
-  font-size: 19px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: -0.02em;
   margin: 0 0 8px;
@@ -865,6 +943,44 @@ section:before {
 }
 
 .note b { font-weight: 500; color: var(--text); }
+
+.desk-map {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.desk {
+  min-height: 126px;
+  padding: 16px 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.desk.default {
+  border-color: rgba(34, 211, 238, 0.3);
+  background: linear-gradient(155deg, rgba(34, 211, 238, 0.035), transparent), var(--panel);
+}
+
+.desk.optional {
+  border-style: dashed;
+}
+
+.desk h3 {
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  margin: 8px 0 8px;
+}
+
+.desk p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
 
 /* Dallas */
 
@@ -1313,7 +1429,10 @@ section:before {
   .notebook,
   .lower,
   .layer,
-  .heading {
+  .heading,
+  .overflow,
+  .dest-grid,
+  .desk-map {
     grid-template-columns: 1fr;
     display: grid;
   }
@@ -1529,6 +1648,9 @@ section:before {
   .note,
   .race-top,
   .race-bottom,
+  .overflow,
+  .dest-grid,
+  .desk-map,
   .site-footer .wrap {
     display: grid;
     grid-template-columns: 1fr;
