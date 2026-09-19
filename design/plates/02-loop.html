@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Full Loop — Iterate Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0A0A0B;--panel:#121214;--raised:#1A1A1E;--line:rgba(255,255,255,.08);--accent:#22D3EE;--text:#F5F5F5;--muted:#A1A1AA}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+#frame{width:1440px;height:900px;overflow:hidden;position:relative;padding:40px 64px;background:radial-gradient(ellipse at 65% 48%,rgba(34,211,238,.04),transparent 55%),var(--bg)}
+header{height:68px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start}
+.logo{width:210px;height:38px;object-fit:contain;object-position:left}
+.eyebrow{font-size:11px;letter-spacing:.17em;text-transform:uppercase;color:var(--muted)}
+.header-note{padding-top:12px}
+.header-note span{color:var(--accent);margin-left:20px}
+main{padding-top:40px}
+.heading{display:flex;align-items:flex-end;justify-content:space-between}
+h1{font:500 58px/1.15 "Playfair Display",Georgia,serif;letter-spacing:-.035em;margin:14px 0 0}
+.heading p{font-size:13px;line-height:1.7;color:var(--muted);margin:0 0 4px;text-align:right}
+.phases{display:grid;grid-template-columns:2fr 2fr 2fr;gap:18px;margin:36px 0 18px}
+.phase{padding:12px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.phase b{color:var(--accent);font-weight:400}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.node{height:298px;padding:19px 16px;background:var(--panel);border:1px solid var(--line);border-radius:10px;position:relative}
+.node:not(:last-child):after{content:"→";position:absolute;right:-17px;top:139px;width:17px;text-align:center;color:var(--accent);z-index:2;font-size:15px}
+.num{width:33px;height:33px;border:1px solid rgba(34,211,238,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--accent);margin-bottom:22px}
+.node h2{font-size:20px;font-weight:500;line-height:1.25;letter-spacing:-.035em;margin:0 0 15px}
+.node p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+.node p strong{font-weight:500;color:var(--text)}
+.tag{position:absolute;bottom:17px;left:16px;right:16px;padding-top:12px;border-top:1px solid var(--line);font-size:10px;color:var(--accent)}
+.node.final{border-color:rgba(34,211,238,.3);background:linear-gradient(155deg,rgba(34,211,238,.035),transparent),var(--panel)}
+.guardrail{display:flex;justify-content:space-between;align-items:center;margin-top:20px;border:1px solid var(--line);border-radius:8px;padding:17px 20px;background:var(--raised);font-size:12px}
+.guardrail span{color:var(--muted)}
+.guardrail b{color:var(--accent);font-weight:500}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 24px;margin-top:29px}
+.role{display:flex;gap:12px;font-size:11px;line-height:1.5}
+.role b{min-width:65px;font-weight:500}
+.role span{color:var(--muted)}
+footer{position:absolute;bottom:29px;left:64px;right:64px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="frame">
+<header>
+<img class="logo" src="lockup-b.svg" alt="Iterate Consulting">
+<div class="eyebrow header-note">Chicago / Operating sequence <span>HOLD LIVE</span></div>
+</header>
+<main>
+<div class="heading">
+<div><div class="eyebrow">02 / End-to-end architecture</div><h1>One loop. Clear ownership.</h1></div>
+<p>Design when needed. Race in parallel.<br>Converge before anything ships.</p>
+</div>
+<div class="phases">
+<div class="phase"><span>Define &amp; lock</span><b>01–02</b></div>
+<div class="phase"><span>Build &amp; review</span><b>03–04</b></div>
+<div class="phase"><span>Select &amp; authorize</span><b>05–06</b></div>
+</div>
+<section class="flow" aria-label="Six-step build loop">
+<article class="node">
+<div class="num">01</div><h2>Ask lands<br>at Erlich.</h2>
+<p>Chicago PM receives the ask and routes the work.</p>
+<div class="tag">Entry / brief</div>
+</article>
+<article class="node">
+<div class="num">02</div><h2>UI needs<br>design?</h2>
+<p><strong>Dinesh</strong> → Open Design / Astra plates → <strong>Jason locks plates.</strong><br>No UI design needed? Continue.</p>
+<div class="tag">Conditional / design-only</div>
+</article>
+<article class="node">
+<div class="num">03</div><h2>Four writers.<br>Concurrent.</h2>
+<p><strong>Jian-Yang</strong> starts FOUR writers on separate branches.</p>
+<div class="tag">Fan-out / 4 branches</div>
+</article>
+<article class="node">
+<div class="num">04</div><h2>Every PR<br>gets reviewed.</h2>
+<p><strong>Codex</strong> reviews each PR when open. All four enter the review lane.</p>
+<div class="tag">Review-only / every PR</div>
+</article>
+<article class="node">
+<div class="num">05</div><h2>First clean<br>PR wins.</h2>
+<p><strong>Erlich</strong> picks the first clean PR; closes the other three.</p>
+<div class="tag">Converge / one ship PR</div>
+</article>
+<article class="node final">
+<div class="num">06</div><h2>Jason yes.<br>Then merge.</h2>
+<p><strong>Gilfoyle</strong> deploys if needed. Jason’s explicit yes is required before merge/deploy.</p>
+<div class="tag">Human gate / no auto-ship</div>
+</article>
+</section>
+<div class="guardrail"><span>Fastest is not enough. <b>First clean</b> is the selection rule.</span><span>Empty CI / billing skips ≠ clean</span></div>
+<section class="roles" aria-label="Exact role assignments">
+<div class="role"><b>Erlich</b><span>Chicago PM / PR router</span></div>
+<div class="role"><b>Dinesh</b><span>design-only</span></div>
+<div class="role"><b>Jian-Yang</b><span>coding owner</span></div>
+<div class="role"><b>Codex</b><span>review-only</span></div>
+<div class="role"><b>Gilfoyle</b><span>deploy / infra</span></div>
+<div class="role"><b>Jason</b><span>explicit yes before merge/deploy</span></div>
+</section>
+</main>
+<footer><span>Iterate Consulting / Chicago Build Loop</span><span>Architecture · design only · HOLD live</span><span>02 / 06</span></footer>
+</div>
+</body>
+</html>
