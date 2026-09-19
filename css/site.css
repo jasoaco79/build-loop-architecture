@@ -382,6 +382,67 @@ section:before {
   gap: 16px;
 }
 
+.loop-cycle {
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.loop-return {
+  display: grid;
+  grid-template-columns: 14px 1fr auto 1fr 14px auto;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  min-height: 28px;
+}
+
+.loop-return .rail {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.45), rgba(34, 211, 238, 0.18));
+}
+
+.loop-return .rail-cap {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  border-top: 0;
+  box-sizing: border-box;
+}
+
+.loop-return .rail-cap.start {
+  border-right: 0;
+  border-radius: 0 0 0 8px;
+  align-self: start;
+  height: 18px;
+  margin-top: -4px;
+}
+
+.loop-return .rail-cap.end {
+  border-left: 0;
+  border-radius: 0 0 8px 0;
+  align-self: start;
+  height: 18px;
+  margin-top: -4px;
+}
+
+.loop-return-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.loop-return-arrow {
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1;
+  margin-left: 2px;
+}
+
 .node {
   min-height: 298px;
   padding: 19px 16px;
@@ -1354,7 +1415,6 @@ section:before {
   .display { font-size: 44px; }
 
   .architecture,
-  .desktop-flow,
   .writers .cards,
   .writer-row,
   .stages,
@@ -1362,9 +1422,21 @@ section:before {
     grid-template-columns: 1fr 1fr;
   }
 
+  .loop-cycle {
+    overflow-x: auto;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .desktop-flow {
+    grid-template-columns: repeat(6, minmax(168px, 1fr));
+    min-width: 1100px;
+  }
+
+  .loop-return { min-width: 1100px; }
+
   .architecture { gap: 16px; }
   .architecture .connector,
-  .node:not(:last-child):after,
   .writers .card:before,
   .bus,
   .lifecycle .stage:not(:last-child):after,
@@ -1454,6 +1526,7 @@ section:before {
   .architecture,
   .diagram-label,
   .roles,
+  .loop-cycle,
   .desktop-flow,
   .phases,
   .guardrail,

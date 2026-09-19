@@ -113,7 +113,8 @@
           <div class="phase"><span>Select &amp; authorize</span><b>05–06</b></div>
         </div>
 
-        <div class="flow desktop-flow" aria-label="Six-step build loop">
+        <div class="loop-cycle" aria-label="Six-step build loop — left-to-right cycle">
+          <div class="flow desktop-flow" aria-label="Steps 01 through 06, left to right">
           <article class="node">
             <div class="num">01</div>
             <h3>Ask lands<br>at Erlich.</h3>
@@ -150,6 +151,15 @@
             <p><strong>Gilfoyle</strong> deploys if needed. Jason’s explicit yes is required before merge/deploy.</p>
             <div class="tag">Human gate / no auto-ship</div>
           </article>
+          </div>
+          <div class="loop-return" aria-hidden="true">
+            <span class="rail-cap start"></span>
+            <span class="rail"></span>
+            <span class="loop-return-label">Next ask · cycle returns to 01</span>
+            <span class="rail"></span>
+            <span class="rail-cap end"></span>
+            <span class="loop-return-arrow">↩</span>
+          </div>
         </div>
 
         <ol class="mobile-loop" aria-label="Six-step Chicago build loop">
