@@ -138,6 +138,16 @@ Dallas Slack overflow remains a CoS-to-CoS relay, **not** the default race. `gro
 - Do not deploy Duck or change popstarr.
 - Do not restage or cut DNS for `https://stack.iterateconsulting.ai`.
 
+## Jev governance notes (additive, writer_claude_box)
+
+`jev.html` is a new, separate page (not one of the locked plates 01–07) linked
+from the main footer. It cross-links to the `jev-stack` repo's decision layer
+and documents the `writer_claude_box` jev-stack lane, the CoS Jev router
+(who/whether → one lane up front → stage-and-close only on 2+ clean PRs), and
+Jason's exclusive locks. It does not touch, reorder, or replace this repo's
+own four locked writer seats or its own separate race process — those stay
+exactly as documented above.
+
 ## Secrets
 
 None. Do not add API keys, pixels, Formspree, or env files.
