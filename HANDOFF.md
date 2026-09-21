@@ -148,6 +148,12 @@ Jason's exclusive locks. It does not touch, reorder, or replace this repo's
 own four locked writer seats or its own separate race process — those stay
 exactly as documented above.
 
+Footer also links `/jev-stack/` ("Jev stack status") — Jason's locked plan is
+for the deployed `jev-stack` static status page to live at that path under
+`stack.iterateconsulting.ai/jev-stack/`. That path is not populated by this
+repo and will 404 until it's actually deployed there; no DNS or deploy work
+is part of this pickup.
+
 ## Secrets
 
 None. Do not add API keys, pixels, Formspree, or env files.
