@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0A0A0B">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Jev governance notes — Chicago Build Loop</title>
+  <meta name="description" content="Cross-link notes: CoS Jev router, writer_claude_box seat, and Instinct/Jason's exclusive locks. Design only. HOLD live.">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void: #0A0A0B;
+      --panel: #121214;
+      --raised: #1A1A1E;
+      --hairline: rgba(255,255,255,0.08);
+      --text: #F5F5F5;
+      --muted: #A1A1AA;
+      --accent: #22D3EE;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--void);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+    header.top {
+      border-bottom: 1px solid var(--hairline);
+      padding: 1.25rem 0;
+    }
+    header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    header.top a.back { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    header.top a.back:hover { color: var(--accent); }
+    .hold {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+    }
+    main { padding: 2.5rem 0 4rem; }
+    h1 { font-family: "Playfair Display", serif; font-weight: 600; font-size: 2rem; margin-bottom: 0.25rem; }
+    .subtitle { color: var(--muted); margin-top: 0; }
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-top: 2.5rem;
+      border-bottom: 1px solid var(--hairline);
+      padding-bottom: 0.5rem;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--hairline);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 0.85rem 0;
+    }
+    .card strong { color: var(--text); }
+    ul { padding-left: 1.2rem; }
+    li { margin: 0.4rem 0; color: var(--text); }
+    code {
+      background: var(--raised);
+      border: 1px solid var(--hairline);
+      border-radius: 4px;
+      padding: 0.1rem 0.4rem;
+      font-size: 0.9em;
+    }
+    a { color: var(--accent); }
+    .note { color: var(--muted); font-size: 0.9rem; }
+    footer.site-footer {
+      border-top: 1px solid var(--hairline);
+      padding: 1.5rem 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer.site-footer .wrap { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="back" href="index.html">&larr; Chicago Build Loop</a>
+      <span class="hold">HOLD LIVE</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <h1>Jev governance notes</h1>
+      <p class="subtitle">Cross-link notes for the decision layer this site's build loop reports up to. Design only — not part of the locked plates 01&ndash;07.</p>
+
+      <section>
+        <h2>CoS Jev router</h2>
+        <p>How a deliverable gets assigned and closed out across the wider stack (this repo's own writer race on plates 01&ndash;07 already ran this exact pattern in 2026-09-19's PR history):</p>
+        <div class="card">
+          <p><strong>A &mdash; who/whether.</strong> Decide who, if anyone, picks up the work before it starts.</p>
+        </div>
+        <div class="card">
+          <p><strong>B &mdash; one writer lane up front.</strong> A single lane is named for a deliverable; it's not a race by default.</p>
+        </div>
+        <div class="card">
+          <p><strong>C &mdash; stage-and-close, conditional.</strong> Only when two or more clean PRs land for the same deliverable does CoS Jev stage the winner and close the losers &mdash; a fallback, not the default. (This site's own four-writer race for plates 01&ndash;07 is a separate, pre-existing house process and stays exactly as documented in <code>HANDOFF.md</code>; it is not superseded by the CoS Jev router.)</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>writer_claude_box seat</h2>
+        <p>
+          This page was produced on the <code>writer_claude_box</code> lane &mdash; an
+          optional seat in the <a href="https://github.com/jasoaco79/jev-stack">jev-stack</a>
+          writer roster, running on a shared computer ("Grok Bot") under a personal
+          Claude Pro account. The <code>grimstarr</code> Claude instance is kept
+          separate and personal &mdash; it is not part of this roster.
+        </p>
+        <p class="note">
+          This is a jev-stack lane designation, distinct from this repo's own four
+          locked writer seats (Cursor cloud &middot; pi/terra-gpt &middot; Antigravity &middot;
+          Grok Build) documented in <code>HANDOFF.md</code>. It does not add, replace, or
+          reorder those seats.
+        </p>
+      </section>
+
+      <section>
+        <h2>Instinct / Jason's locks</h2>
+        <ul>
+          <li>Jason (Instinct) is the sole owner of merge, live/deploy, money, and email/send &mdash; across both this microsite and jev-stack.</li>
+          <li>Jev only recommends; it never auto-executes those four actions. Kill switch defaults on.</li>
+          <li>Same locks this repo already documents: no merge, no deploy, no restage, no DNS cut for <code>stack.iterateconsulting.ai</code> without Jason's explicit yes.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Cross-links</h2>
+        <ul>
+          <li><a href="https://github.com/jasoaco79/jev-stack">jasoaco79/jev-stack</a> &mdash; the decision-layer repo (Layer 1 injection detection, shadow-only).</li>
+          <li><a href="https://github.com/jasoaco79/jev-stack/pull/2">jev-stack PR #2</a> &mdash; that repo's own static status page, same pattern as this page.</li>
+          <li>Intended public host for this site: <code>https://stack.iterateconsulting.ai</code> &mdash; not live; Gilfoyle attaches DNS only after Jason's merge yes.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Iterate Consulting / Chicago Build Loop</span>
+      <span>Jev governance notes · design only · HOLD live</span>
+      <span>No Duck cutover</span>
+    </div>
+  </footer>
+</body>
+</html>
