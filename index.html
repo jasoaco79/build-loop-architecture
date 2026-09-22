@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#0A0A0B">
   <meta name="robots" content="noindex, nofollow">
   <title>Chicago Build Loop — Iterate Consulting</title>
-  <meta name="description" content="Architecture for Iterate Consulting. Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes. Design only. HOLD live.">
+  <meta name="description" content="Architecture for Iterate Consulting. CoS Jev picks one writer lane up front. Codex reviews. Jason says yes. Design only. HOLD live.">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,7 @@
       <div class="wrap">
         <p class="eyebrow">01 / The operating thesis</p>
         <h1 id="hero-title">Chicago <span>Build Loop</span></h1>
-        <p class="thesis">Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes.</p>
+        <p class="thesis">CoS Jev picks one writer lane up front. Codex reviews. Jason says yes.</p>
         <p class="subtitle">Architecture for Iterate Consulting · design only · HOLD live.</p>
 
         <div class="architecture" aria-label="Build architecture overview">
@@ -55,23 +55,23 @@
           </article>
           <div class="connector" aria-hidden="true"></div>
           <article class="panel writer-stack">
-            <p class="eyebrow">02 / Jian-Yang fans out</p>
-            <div class="writer"><span><i class="dot"></i>Cursor cloud</span><small>branch 01</small></div>
-            <div class="writer"><span><i class="dot"></i>pi / terra-gpt</span><small>branch 02</small></div>
-            <div class="writer"><span><i class="dot"></i>Antigravity</span><small>branch 03</small></div>
-            <div class="writer"><span><i class="dot"></i>Grok Build</span><small>branch 04</small></div>
+            <p class="eyebrow">02 / CoS Jev picks the lane</p>
+            <div class="writer"><span><i class="dot"></i>Cursor cloud</span><small>seat 01</small></div>
+            <div class="writer"><span><i class="dot"></i>pi / terra-gpt</span><small>seat 02</small></div>
+            <div class="writer"><span><i class="dot"></i>Antigravity</span><small>seat 03</small></div>
+            <div class="writer"><span><i class="dot"></i>Grok Build</span><small>seat 04</small></div>
           </article>
           <div class="connector" aria-hidden="true"></div>
           <article class="panel">
             <div class="number">03</div>
-            <h2>Review all.</h2>
-            <p>Codex reviews each PR<br>when open.<br>Review-only.</p>
+            <h2>Review it.</h2>
+            <p>Codex reviews the PR<br>when open.<br>Review-only.</p>
           </article>
           <div class="connector" aria-hidden="true"></div>
           <article class="panel">
             <div class="number">04</div>
-            <h2>Pick one.</h2>
-            <p>Erlich takes the first<br>clean PR. Closes the<br>other three.</p>
+            <h2>Stage it.</h2>
+            <p>Erlich stages the picked<br>lane's clean PR. Race +<br>close-losers only if 2+ land.</p>
           </article>
           <div class="connector" aria-hidden="true"></div>
           <article class="panel active">
@@ -82,7 +82,7 @@
         </div>
 
         <div class="diagram-label">
-          <span>One brief → four independent branches</span>
+          <span>One brief → one picked lane (race only on Choice C)</span>
           <span>One clean ship PR → human approval</span>
         </div>
 
@@ -104,7 +104,7 @@
             <p class="eyebrow">02 / End-to-end architecture</p>
             <h2 id="loop-title" class="display">One loop. Clear ownership.</h2>
           </div>
-          <p class="lede">Design when needed. Race in parallel.<br>Converge before anything ships.</p>
+          <p class="lede">Design when needed. One lane picked up front.<br>Converge before anything ships.</p>
         </div>
 
         <div class="phases">
@@ -129,20 +129,20 @@
             </article>
             <article class="node">
               <div class="num">03</div>
-              <h3>Four writers.<br>Concurrent.</h3>
-              <p><strong>Jian-Yang</strong> starts FOUR writers on separate branches.</p>
-              <div class="tag">Fan-out / 4 branches</div>
+              <h3>CoS Jev picks<br>one lane.</h3>
+              <p><strong>Jian-Yang</strong> assigns ONE writer lane up front. Race is a fallback, not the default.</p>
+              <div class="tag">Choice B / one lane</div>
             </article>
             <article class="node">
               <div class="num">04</div>
-              <h3>Every PR<br>gets reviewed.</h3>
-              <p><strong>Codex</strong> reviews each PR when open. All four enter the review lane.</p>
+              <h3>The PR<br>gets reviewed.</h3>
+              <p><strong>Codex</strong> reviews the PR when open. Any race-fallback PRs enter the same review lane.</p>
               <div class="tag">Review-only / every PR</div>
             </article>
             <article class="node">
               <div class="num">05</div>
-              <h3>First clean<br>PR wins.</h3>
-              <p><strong>Erlich</strong> picks the first clean PR; closes the other three.</p>
+              <h3>Clean PR<br>stages.</h3>
+              <p><strong>Erlich</strong> stages the picked lane's clean PR. Only on 2+ clean PRs (Choice C) does CoS Jev stage the winner and close the rest.</p>
               <div class="tag">Converge / one ship PR</div>
             </article>
             <article class="node final">
@@ -167,23 +167,24 @@
           <li class="step">
             <span class="num">03</span>
             <div class="card">
-              <h3>Jian-Yang starts FOUR writers</h3>
-              <p>Coding owner · concurrent, separate branches</p>
+              <h3>Jian-Yang assigns one lane</h3>
+              <p>Coding owner · Choice B, one lane up front</p>
               <div class="writer-tags">
                 <span>Cursor cloud</span>
                 <span>pi / terra-gpt</span>
                 <span>Antigravity</span>
                 <span>Grok Build</span>
+                <span>writer_claude_box <small>(optional)</small></span>
               </div>
             </div>
           </li>
           <li class="step">
             <span class="num">04</span>
-            <div class="card"><h3>Codex reviews each PR <span class="role-chip">review-only</span></h3><p>When open. All four get reviewed.</p></div>
+            <div class="card"><h3>Codex reviews the PR <span class="role-chip">review-only</span></h3><p>When open. Any race-fallback PRs get reviewed too.</p></div>
           </li>
           <li class="step">
             <span class="num">05</span>
-            <div class="card"><h3>Erlich picks the first clean PR</h3><p>Closes the other three. Empty CI / billing skips are not “clean”.</p></div>
+            <div class="card"><h3>Erlich stages the clean PR</h3><p>Race + close-losers only on 2+ clean PRs (Choice C). Empty CI / billing skips are not “clean”.</p></div>
           </li>
           <li class="step">
             <span class="num">06</span>
@@ -193,7 +194,7 @@
 
         <div class="loop-head-mobile">
           <span class="eyebrow">The loop / 6 steps</span>
-          <span>4 branches → 1 ship PR</span>
+          <span>1 picked lane → 1 ship PR</span>
         </div>
 
         <div class="guardrail">
@@ -217,38 +218,38 @@
         <div class="heading">
           <div>
             <p class="eyebrow">03 / Writer topology</p>
-            <h2 id="writers-title" class="display">Four lanes. One finish.</h2>
+            <h2 id="writers-title" class="display">Four paced seats. One picked.</h2>
           </div>
-          <p class="lede">Concurrent by design, isolated by branch.<br>Harness and model assignments stay explicit.</p>
+          <p class="lede">Isolated by branch, picked one at a time by default.<br>Harness and model assignments stay explicit.</p>
         </div>
 
-        <div class="owner"><span><b>Jian-Yang</b> · coding owner · starts FOUR concurrent writers</span></div>
+        <div class="owner"><span><b>Jian-Yang</b> · coding owner · CoS Jev assigns one lane up front</span></div>
         <div class="bus" aria-hidden="true"></div>
 
         <div class="cards" aria-label="Four concurrent writer assignments">
           <article class="card">
-            <div class="card-top"><span class="num">01</span><span class="parallel">Concurrent writer</span></div>
+            <div class="card-top"><span class="num">01</span><span class="parallel">Paced writer seat</span></div>
             <h3>Cursor cloud</h3>
             <p class="label">Harness + model</p>
             <p class="model">Cursor cloud agents (account default model)</p>
             <div class="branch"><span>Separate branch 01</span><span>PR → Codex</span></div>
           </article>
           <article class="card">
-            <div class="card-top"><span class="num">02</span><span class="parallel">Concurrent writer</span></div>
+            <div class="card-top"><span class="num">02</span><span class="parallel">Paced writer seat</span></div>
             <h3>pi / terra-gpt</h3>
             <p class="label">Harness + model</p>
             <p class="model">pi CLI with terra/gpt <small class="config-note">Also configurable for Astra · gpt-6-astra via openai-codex on popstarr</small></p>
             <div class="branch"><span>Separate branch 02</span><span>PR → Codex</span></div>
           </article>
           <article class="card">
-            <div class="card-top"><span class="num">03</span><span class="parallel">Concurrent writer</span></div>
+            <div class="card-top"><span class="num">03</span><span class="parallel">Paced writer seat</span></div>
             <h3>Antigravity</h3>
             <p class="label">Harness + model</p>
             <p class="model">Antigravity CLI (agy); Google AI Pro</p>
             <div class="branch"><span>Separate branch 03</span><span>PR → Codex</span></div>
           </article>
           <article class="card">
-            <div class="card-top"><span class="num">04</span><span class="parallel">Concurrent writer</span></div>
+            <div class="card-top"><span class="num">04</span><span class="parallel">Paced writer seat</span></div>
             <h3>Grok Build</h3>
             <p class="label">Harness + model</p>
             <p class="model">Grok Build on SuperGrok bucket</p>
@@ -272,18 +273,34 @@
           <p class="overflow-copy">Not default. Does not replace the four locked seats. Diagram capacity only — does not authorize Codex application PRs.</p>
         </aside>
 
-        <div class="review" aria-label="Convergence after the race">
-          <div class="stage"><span>Codex reviews all</span><small>When each PR opens</small></div>
+        <aside class="overflow" aria-label="Optional writer_claude_box seat">
+          <div class="overflow-id">
+            <span class="num">+</span>
+            <div>
+              <p class="eyebrow">Optional seat, outside the four paced buckets</p>
+              <h3>writer_claude_box</h3>
+            </div>
+          </div>
+          <div class="choices" aria-label="writer_claude_box detail">
+            <span class="choice">Grok Bot shared computer</span>
+            <span class="or">·</span>
+            <span class="choice">personal Claude Pro</span>
+          </div>
+          <p class="overflow-copy">Not one of the four locked seats. <code>grimstarr</code> Claude stays personal / separate — not part of this roster.</p>
+        </aside>
+
+        <div class="review" aria-label="Selection and convergence">
+          <div class="stage"><span>Codex reviews it</span><small>When the picked PR opens</small></div>
           <div class="arrow" aria-hidden="true">→</div>
-          <div class="stage"><span>Erlich picks first clean</span><small>Closes other three</small></div>
+          <div class="stage"><span>Erlich stages the clean PR</span><small>Race + close-losers only on 2+ clean PRs</small></div>
           <div class="arrow" aria-hidden="true">→</div>
           <div class="stage"><span>Jason gives explicit yes</span><small>Before merge/deploy</small></div>
         </div>
 
         <div class="rules">
-          <span class="label">Race rules</span>
-          <span class="chip">separate branches</span>
-          <span class="chip">first clean wins</span>
+          <span class="label">Selection rules</span>
+          <span class="chip">one lane picked up front (Choice B)</span>
+          <span class="chip">race + close-losers only on 2+ clean PRs (Choice C)</span>
           <span class="chip">one ship PR after pick</span>
           <span class="chip">Codex on all</span>
           <span class="chip">overflow not default</span>
@@ -299,7 +316,7 @@
             <p class="eyebrow">04 / Redundancy &amp; failover</p>
             <h2 id="failover-title" class="display">A stalled lane isn’t a stalled loop.</h2>
           </div>
-          <p class="lede">Keep the race moving.<br>Never weaken the clean-PR gate.</p>
+          <p class="lede">Applies when Choice C's race is running.<br>Never weaken the clean-PR gate.</p>
         </div>
 
         <div class="layers" aria-label="Layered redundancy architecture">
@@ -389,14 +406,14 @@
             <p class="eyebrow">05 / Cross-desk load balance</p>
             <h2 id="dallas-title" class="display">More capacity. Not another bot.</h2>
           </div>
-          <p class="lede">A CoS-to-CoS relay through Slack.<br>Chicago stays the default race. Dallas is overflow. Florida / Hermes is alternate overflow when named.</p>
+          <p class="lede">A CoS-to-CoS relay through Slack.<br>Chicago stays the default desk. Dallas is overflow. Florida / Hermes is alternate overflow when named.</p>
         </div>
 
         <div class="desk-map" aria-label="Desk routing">
           <article class="desk default">
             <p class="eyebrow">Chicago</p>
-            <h3>Default race</h3>
-            <p>Four locked writers. Unchanged.</p>
+            <h3>Default desk</h3>
+            <p>Four locked writer seats. CoS Jev picks one lane up front.</p>
           </article>
           <article class="desk">
             <p class="eyebrow">Dallas</p>
@@ -425,7 +442,7 @@
               <p>Recognizes the capacity constraint or Dallas fit. Relays the brief to Dallas CoS in the Slack room.</p>
               <span class="role">Brief relay / desk coordination</span>
             </div>
-            <p class="lane-foot">Local four-writer loop remains the default</p>
+            <p class="lane-foot">Local one-lane-up-front loop remains the default</p>
           </article>
           <article class="lane bridge">
             <div class="lane-head"><h3>Slack bridge</h3><span>Shared coordination room</span></div>
@@ -446,7 +463,7 @@
               <p>Receives the relayed brief for Dallas full-stack work. Coordinates the Dallas-side desk response.</p>
               <span class="role">Full-stack fit / e.g. Bolton on pi</span>
             </div>
-            <p class="lane-foot">Additional desk capacity, outside the default race</p>
+            <p class="lane-foot">Additional desk capacity, outside the default desk</p>
           </article>
         </div>
 
@@ -463,7 +480,7 @@
         </div>
 
         <div class="boundary">
-          <b>Overflow path, not default race.</b>
+          <b>Overflow path, not the default desk.</b>
           <span>Dallas overflow. Florida / Hermes only when named. No second Chicago coder bot. No change to Jason’s merge/deploy approval gate.</span>
         </div>
       </div>
@@ -503,10 +520,10 @@
             <article class="stage">
               <div class="stage-top"><span class="number">03</span><h3>Execution</h3></div>
               <div class="content">
-                <p class="lead">Jian-Yang launches<br>four concurrent writers.</p>
-                <p class="writer-list">Separate branches<br>Cursor cloud · pi/terra-gpt<br>Antigravity · Grok Build</p>
-                <p class="detail"><strong>Codex</strong> reviews each PR.<br><strong>Erlich</strong> picks first clean;<br>closes the other three.</p>
-                <p class="race"><span class="dots" aria-label="Four parallel writers"><i></i><i></i><i></i><i></i></span><span>Race detail <b>→ plates 02 / 03</b></span></p>
+                <p class="lead">Jian-Yang assigns<br>one writer lane.</p>
+                <p class="writer-list">Four paced seats<br>Cursor cloud · pi/terra-gpt<br>Antigravity · Grok Build</p>
+                <p class="detail"><strong>Codex</strong> reviews the PR.<br><strong>Erlich</strong> stages it clean;<br>race + close-losers only on 2+ PRs.</p>
+                <p class="race"><span class="dots" aria-label="Four paced writer seats"><i></i><i></i><i></i><i></i></span><span>Selection detail <b>→ plates 02 / 03</b></span></p>
               </div>
               <p class="role"><strong>Jian-Yang</strong> — coding owner · <strong>Codex</strong> — review-only</p>
             </article>
@@ -526,7 +543,7 @@
         <div class="lower" aria-label="Lifecycle principles and side paths">
           <div class="principle">
             <p class="small-label">One lifecycle / explicit handoffs</p>
-            <p>Frame the ask. Lock the design. Race the build. Ship only with a human yes.</p>
+            <p>Frame the ask. Lock the design. Pick the lane. Ship only with a human yes.</p>
           </div>
           <div class="sidepaths">
             <a class="sidepath" href="#failover">
