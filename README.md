@@ -2,7 +2,10 @@
 
 Static architecture microsite for how Iterate Consulting’s Chicago desk ships code.
 
-**Four writers race. Codex reviews. Erlich picks the first clean PR. Jason says yes.**
+**CoS Jev picks one writer lane up front. Codex reviews. Jason says yes.**
+
+Race (Choice C: stage the winner, close the losers) is a fallback for when 2+
+clean PRs land on the same deliverable — not the standing default.
 
 Plates locked 2026-09-19 (SoT on `design/sot`). Lockup B. Accent cyan `#22D3EE`.
 
@@ -28,7 +31,7 @@ No npm. No build. No secrets.
 | --- | --- |
 | 01 | Hero / thesis |
 | 02 | Six-step looped cycle (left-to-right, returns to Erlich) |
-| 03 | Writers — four locked seats (Cursor cloud · pi / terra-gpt · Antigravity · Grok Build). Optional 5th overflow (Codex or Astra), not default. |
+| 03 | Writers — four locked seats (Cursor cloud · pi / terra-gpt · Antigravity · Grok Build), one picked up front by CoS Jev. Optional 5th overflow (Codex or Astra), not default. Optional additional seat `writer_claude_box` (Grok Bot shared computer, personal Claude Pro), outside the four paced buckets. |
 | 04 | Failover + leftover handoff (StarrClaw / Dallas Grok Bot sub 2 / Florida Hermes) |
 | 05 | Dallas overflow; Florida / Hermes alternate overflow when named |
 | 06 | Mobile compression of hero + loop |
